@@ -44,17 +44,27 @@
   </div>
 <?php }else{?>
 
+  <!--USER-->
   <form class="col-6 ps-5" action="<?=url.'?controller=user&action=logout'?>" method="post">
     <button class="btn">Modificar datos</button>
   </form>
-
   <form class="col-6 ps-5" action="<?=url.'?controller=user&action=logout'?>" method="post">
     <button class="btn">Eliminar cuenta</button>
   </form>
-
   <form class="col-6 ps-5" action="<?=url.'?controller=user&action=logoutProcess'?>" method="post">
     <button class="btn">Cerrar sesión</button>
   </form>
+  
+    <!--USER_ADMIN-->
+    <form class="col-6 ps-5" action="<?=url.'?controller=user&action=logout'?>" method="post">
+      <button class="btn">Modificar datos</button>
+    </form>
+    <form class="col-6 ps-5" action="<?=url.'?controller=user&action=logout'?>" method="post">
+      <button class="btn">Eliminar cuenta</button>
+    </form>
+    <form class="col-6 ps-5" action="<?=url.'?controller=user&action=logoutProcess'?>" method="post">
+      <button class="btn">Cerrar sesión</button>
+    </form>
 
   <?php }?>
   <!-------------------------------------------------------------------------------->

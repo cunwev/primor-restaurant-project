@@ -67,12 +67,14 @@
           <?php if(!isset($_SESSION['user'])){?>
             <form action="<?=url.'?controller=user&action=login'?>" method="post">
           <?php }else{?>
-            <form  method="post">
+            <form action="<?=url.'?controller=producto&action=finalizar'?>" method="post">
           <?php }?>
-            <input type="password" placeholder="Introducir código de descuento" style="width: 231px !important; height: 40px !important" />
+            <input type="text" placeholder="Introducir código de descuento" style="width: 231px !important; height: 40px !important" />
             <button type="submit" class="fw-semibold" style="width: 128px !important; height: 40px; ">APLICAR</button>
-            <button type="submit" class="fw-semibold" style="width: 368px !important; height: 40px; margin-top: 16px; ">CONTINUAR</button>
+            <input type="hidden" name="precioFinal" value="<?=CalculadoraPrecios::calculadorPrecioPedido($_SESSION['addproducto'])." €"?>" >
+            <button type="submit" name="precio" id="pass" class="fw-semibold" style="width: 368px !important; height: 40px; margin-top: 16px; ">CONTINUAR</button>
           </form>
+          <?php var_dump(CalculadoraPrecios::calculadorPrecioPedido($_SESSION['addproducto']))?>
 
 
           <div class="row" style="margin-top: 40px">

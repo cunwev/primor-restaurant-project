@@ -75,6 +75,14 @@
             // Panel carrito
             include_once 'views/panelCarrito.php';
         }
+
+        public function finalizar(){
+            //Te almacena el pedido en la base de datos, PedidoDAO que guarda el pedido en BBDD
+            
+            //Guardo la COOKIE
+            var_dump($_POST['precioFinal']);
+            setcookie('UltimoPedidoCOOKIE',$_POST['precioFinal'],time()+3600);
+            }
     }
 
 ?>
