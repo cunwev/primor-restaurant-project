@@ -45,7 +45,7 @@
               </form>
             </td>
             <td>
-              <form action="<?=url.'?controller=producto&action=eliminarProducto'?>" method="post">
+              <form action="<?=url.'?controller=producto&action=eliminarProductoCesta'?>" method="post">
                 <button name="btn_borrar" value="<?=$pos?>">Eliminar</button>
               </form>
             </td>

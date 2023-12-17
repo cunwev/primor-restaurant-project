@@ -27,8 +27,24 @@ class ProductoDAO {
         $stmt->bind_param("i",$id);
         $stmt->execute();
         $resultado=$stmt->get_result();
-
+        var_dump($resultado);
         return $resultado->fetch_object('Producto');
     }
+
+
+
+        public static function deleteProductoById($id) {
+            echo $id;
+            $conexion = Database::connect();
+            $stmt = $conexion->prepare("DELETE FROM productos WHERE producto_id=?");
+            $stmt->bind_param("i", $id);
+        
+            $stmt->execute();
+        
+            // No es necesario obtener el resultado después de la ejecución del DELETE
+        
+            // Puedes devolver un indicador de éxito o algún otro valor si lo necesitas
+            return $stmt->affected_rows > 0; // Devuelve true si se eliminó al menos una fila, indicando éxito
+        }
 }
 ?>

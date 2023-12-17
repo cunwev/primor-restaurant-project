@@ -54,27 +54,17 @@
   <form class="col-6 ps-5" action="<?=url.'?controller=user&action=logoutProcess'?>" method="post">
     <button class="btn">Cerrar sesión</button>
   </form>
-  
+
     <!--USER_ADMIN-->
-    <form class="col-6 ps-5" action="<?=url.'?controller=user&action=logout'?>" method="post">
-      <button class="btn">Modificar datos</button>
+    <form class="col-6 ps-5" action="<?=url.'?controller=user&action=goAdmin'?>" method="post">
+      <button class="btn">Administrar productos</button>
     </form>
-    <form class="col-6 ps-5" action="<?=url.'?controller=user&action=logout'?>" method="post">
-      <button class="btn">Eliminar cuenta</button>
-    </form>
-    <form class="col-6 ps-5" action="<?=url.'?controller=user&action=logoutProcess'?>" method="post">
-      <button class="btn">Cerrar sesión</button>
-    </form>
+
 
   <?php }?>
   <!-------------------------------------------------------------------------------->
   <br>
-  <!-- Remove the container if you want to extend the Footer to full width. -->
-  <footer class="border-black text-center text-white pt-1" style="background-color: #ffffff;">
+
     <?php include_once "views/footer.php"?>
-  </footer>
-
-
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
 
 </html>

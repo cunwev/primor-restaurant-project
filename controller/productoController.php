@@ -36,7 +36,7 @@
             $this->carta();
         }
 
-        public function eliminarProducto(){
+        public function eliminarProductoCesta(){
             session_start();
 
             unset($_SESSION['addproducto'][$_POST['btn_borrar']]);
@@ -83,6 +83,30 @@
             var_dump($_POST['precioFinal']);
             setcookie('UltimoPedidoCOOKIE',$_POST['precioFinal'],time()+3600);
             }
+
+
+        
+        public function deleteProducto() {
+            if (isset($_POST['btn_delete'])) {
+                $producto_id = $_POST['btn_delete'];
+    
+                // Obtén el producto antes de eliminarlo
+                $productoEliminado = ProductoDAO::getProductID($producto_id);
+    
+                // Elimina el producto por ID
+                $exito = ProductoDAO::deleteProductoById($producto_id);
+    
+                if ($exito) {
+                    // La eliminación fue exitosa, ahora puedes trabajar con $productoEliminado si es necesario
+                    echo "Producto eliminado correctamente";
+                } else {
+                    // Hubo un problema con la eliminación
+                    echo "Error al eliminar el producto";
+                }
+            }
+            //$this->goAdmin();
+        }
+
     }
 
 ?>

@@ -12,11 +12,11 @@ class UserController {
         $pass = $_POST['pass'];
         UsuarioDAO::getUserLogin($usuario,$pass);
     }
-
+/*
     public function register(){
         include_once 'views/panelRegister.php';
     }
-
+*/
 
     public function userData(){
         session_start();
@@ -31,12 +31,13 @@ class UserController {
     }
 
     public function logoutProcess(){
-        /*session_start();
-        unset($_SESSION['user']);
-        header("Location:".url);
-        */
         session_start();
         session_destroy();
         header("Location:".url);
+    }
+
+    public function goAdmin(){
+        $allProducts = ProductoDAO::getAllProducts();
+        include_once 'views/panelAdmin.php';
     }
 }
