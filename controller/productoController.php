@@ -104,9 +104,57 @@
                     echo "Error al eliminar el producto";
                 }
             }
-            //$this->goAdmin();
         }
 
+        public function insertProducto() {
+            if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['btn_insert'])) {
+                // Obtén los valores del formulario
+                $nombre = $_POST['nombre'];
+                $stock = $_POST['stock'];
+                $categoria_id = $_POST['categoria_id'];
+                $precio = $_POST['precio'];
+                $imagen = $_POST['imagen'];
+    
+                // Crea un nuevo objeto Producto con los datos del formulario
+                $nuevoProducto = new Producto($nombre, $stock, $categoria_id, $precio, $imagen);
+    
+                // Inserta el producto en la base de datos
+                $exito = ProductoDAO::insertProducto($nuevoProducto);
+    
+                if ($exito) {
+                    echo "Producto insertado correctamente";
+                } else {
+                    echo "Error al insertar el producto";
+                }
+            }
+        }
+
+
+        public function updateProducto() {
+            if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['btn_update'])) {
+                // Obtén el ID del producto desde el formulario
+                $producto_id = $_POST['producto_id'];
+        
+                // Obtén los valores actualizados del formulario
+                $nombre = $_POST['nombre'];
+                $precio = $_POST['precio'];
+                $stock = $_POST['stock'];
+                $imagen = $_POST['imagen'];
+                $categoria_id = $_POST['categoria_id'];
+        
+                // Crea un nuevo objeto Producto con los datos actualizados
+                $productoActualizado = new Producto($nombre, $stock, $categoria_id, $precio, $imagen);
+        
+                // Actualiza el producto en la base de datos
+                $exito = ProductoDAO::updateProducto($producto_id, $productoActualizado);
+        
+                if ($exito) {
+                    echo "Producto actualizado correctamente";
+                } else {
+                    echo "Error al actualizar el producto";
+                }
+            }
+        }
     }
 
 ?>
