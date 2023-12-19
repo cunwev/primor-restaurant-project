@@ -33,7 +33,7 @@
             <a class="nav-link text-white" href="http://localhost/PRIMOR/index.php?controller=user&action=login"><img src="assets/images/login.png" width="30" height="30" /></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="http://localhost/PRIMOR/index.php?controller=producto&action=carrito"><img src="assets/images/cesta.png" width="30" height="30" /></a>
+            <a class="nav-link text-white" href="http://localhost/PRIMOR/index.php?controller=cesta&action=cesta"><img src="assets/images/cesta.png" width="30" height="30" /></a>
           </li>
         </ul>
       </nav>
@@ -56,7 +56,7 @@
               <a class="nav-link text-white" href="http://localhost/PRIMOR/index.php?controller=producto&action=carta"><button class="btn text-white" type="submit">CARTA</button></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="http://localhost/PRIMOR/index.php?controller=producto&action=carrito"><button class="btn text-white" type="submit">CARRITO</button></a>
+              <a class="nav-link text-white" href="http://localhost/PRIMOR/index.php?controller=cesta&action=cesta"><button class="btn text-white" type="submit">CARRITO</button></a>
             </li>
           </ul>
         </div>

@@ -1,13 +1,12 @@
 <?php
+session_start();
 include_once 'model/UsuarioDAO.php';
 class UserController {
     public function login(){  
-        session_start();
         include_once 'views/panelLogin.php';
     }
 
     public function loginProcess(){
-        session_start();
         $usuario = $_POST['user'];
         $pass = $_POST['pass'];
         UsuarioDAO::getUserLogin($usuario,$pass);

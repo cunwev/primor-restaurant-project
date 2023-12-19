@@ -34,18 +34,18 @@
             <td><?=$pedido->getProducto()->getnombre()?></td>
             <td><?=$pedido->getProducto()->getprecio()?></td>
             <td>
-              <form action="<?=url.'?controller=producto&action=cantidadProducto'?>" method="post">
+              <form action="<?=url.'?controller=cesta&action=cantidadProducto'?>" method="post">
                 <button name="btn_suma" value="<?=$pos?>">+</button>
               </form>
             </td>
             <td> <?=$pedido->getcantidad()?> </td>
             <td>
-              <form action="<?=url.'?controller=producto&action=cantidadProducto'?>" method="post">
+              <form action="<?=url.'?controller=cesta&action=cantidadProducto'?>" method="post">
                 <button name="btn_resta" value="<?=$pos?>">-</button>
               </form>
             </td>
             <td>
-              <form action="<?=url.'?controller=producto&action=eliminarProductoCesta'?>" method="post">
+              <form action="<?=url.'?controller=cesta&action=eliminarProductoCesta'?>" method="post">
                 <button name="btn_borrar" value="<?=$pos?>">Eliminar</button>
               </form>
             </td>
@@ -67,12 +67,12 @@
           <?php if(!isset($_SESSION['user'])){?>
             <form action="<?=url.'?controller=user&action=login'?>" method="post">
           <?php }else{?>
-            <form action="<?=url.'?controller=producto&action=finalizar'?>" method="post">
+            <form action="<?=url.'?controller=cesta&action=finalizar'?>" method="post">
           <?php }?>
             <input type="text" placeholder="Introducir código de descuento" style="width: 231px !important; height: 40px !important" />
             <button type="submit" class="fw-semibold" style="width: 128px !important; height: 40px; ">APLICAR</button>
-            <input type="hidden" name="precioFinal" value="<?=CalculadoraPrecios::calculadorPrecioPedido($_SESSION['addproducto'])." €"?>" >
-            <input type="hidden" name="user" value="<?=$_SESSION['user']?>" >
+            <input type="hidden" name="precioFinal" value="<?=CalculadoraPrecios::calculadorPrecioPedido($_SESSION['addproducto'])?>" >
+            <input type="hidden" name="user" value="<?=$_SESSION['user']?>">
             <button type="submit" name="precio" id="pass" class="fw-semibold" style="width: 368px !important; height: 40px; margin-top: 16px; ">CONTINUAR</button>
           </form>
           <?php

@@ -38,6 +38,8 @@ class UsuarioDAO{
                 if ($pass === $passValue){
                     session_start();
                     $_SESSION['user'] = serialize($usuarioObj);
+
+                    $_SESSION['iduser'] = $usuarioObj -> getClienteId();
                     header('Location:'.url.'?controller=user&action=login');
                     /*debug*/echo "Sesion iniciada";
                     return 3;

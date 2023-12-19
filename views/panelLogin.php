@@ -42,7 +42,9 @@
       </div>
     </form>
   </div>
-<?php }else{?>
+<?php }else{
+  echo 'Tu último pedido fue de '.$_COOKIE[$_SESSION['iduser']].' €';
+  ?>
 
   <!--USER-->
   <form class="col-6 ps-5" action="<?=url.'?controller=user&action=logout'?>" method="post">
@@ -61,7 +63,8 @@
     </form>
 
 
-  <?php }?>
+  <?php }
+  var_dump($_SESSION['iduser']);?>
   <!-------------------------------------------------------------------------------->
   <br>
 
