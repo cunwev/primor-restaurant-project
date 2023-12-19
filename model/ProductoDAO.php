@@ -27,7 +27,6 @@ class ProductoDAO {
         $stmt->bind_param("i",$id);
         $stmt->execute();
         $resultado=$stmt->get_result();
-        var_dump($resultado);
         return $resultado->fetch_object('Producto');
     }
 
@@ -70,8 +69,6 @@ class ProductoDAO {
             $precio = $_POST['precio'];
             $imagen = $_POST['imagen'];
 
-
-            //$stmt = $conexion->prepare("INSERT INTO productos (nombre, precio, stock, imagen, categoria_id) VALUES (?, ?, ?, ?, ?)");
             $stmt = $conexion->prepare("UPDATE productos SET nombre = ?, precio = ?, stock = ?, imagen = ?, categoria_id = ? WHERE producto_id = ?");
             $stmt->bind_param("siisii", $nombre, $precio, $stock, $imagen, $categoria_id, $id);
     

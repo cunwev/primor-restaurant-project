@@ -68,21 +68,32 @@
         }
 
 
-
-
         public function carrito(){
             session_start();
             // Panel carrito
             include_once 'views/panelCarrito.php';
         }
 
+
+
+
         public function finalizar(){
-            //Te almacena el pedido en la base de datos, PedidoDAO que guarda el pedido en BBDD
+            session_start();
+            $userObj = unserialize($_SESSION['user']);
+            $email = $userObj->getEmail();
+            $precioFinal = $_POST['precioFinal'];
             
-            //Guardo la COOKIE
-            var_dump($_POST['precioFinal']);
-            setcookie('UltimoPedidoCOOKIE',$_POST['precioFinal'],time()+3600);
-            }
+            // Establece la cookie
+            setcookie($email, $precioFinal, time() + 3600);
+        
+            // Imprime o manipula el valor directamente
+            $cookie = $_COOKIE[$email];
+            echo $cookie;
+        }
+
+
+
+
 
 
         
@@ -99,6 +110,7 @@
                 if ($exito) {
                     // La eliminación fue exitosa, ahora puedes trabajar con $productoEliminado si es necesario
                     echo "Producto eliminado correctamente";
+                    header('Location:'.url.'?controller=user&action=goAdmin');
                 } else {
                     // Hubo un problema con la eliminación
                     echo "Error al eliminar el producto";
@@ -123,6 +135,7 @@
     
                 if ($exito) {
                     echo "Producto insertado correctamente";
+                    header('Location:'.url.'?controller=user&action=goAdmin');
                 } else {
                     echo "Error al insertar el producto";
                 }
@@ -150,6 +163,7 @@
         
                 if ($exito) {
                     echo "Producto actualizado correctamente";
+                    header('Location:'.url.'?controller=user&action=goAdmin');
                 } else {
                     echo "Error al actualizar el producto";
                 }

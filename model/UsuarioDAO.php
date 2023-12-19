@@ -6,9 +6,10 @@ include_once 'Usuario.php';
 class UsuarioDAO{
 
     public static function getUserLogin($usuario,$pass){
+
         $conn = database::connect();
         $stmt = $conn->prepare("SELECT * FROM CLIENTES WHERE usuario=?");
-        $stmt->bind_param("i",$usuario);
+        $stmt->bind_param("s",$usuario);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -32,12 +33,8 @@ class UsuarioDAO{
                 return 2;
             }else{
                 $row = $result->fetch_assoc();
-
-
                 $passValue = $row['password'];
-                var_dump ($passValue);
-                echo $pass;
-
+                
                 if ($pass === $passValue){
                     session_start();
                     $_SESSION['user'] = serialize($usuarioObj);

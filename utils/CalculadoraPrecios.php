@@ -8,7 +8,7 @@ Class CalculadoraPrecios{
             $precioTotal += $pedido->getProducto()->getprecio()*$pedido->getCantidad();
         }
 
-        return $precioTotal;
+        return number_format($precioTotal, 2);
     }
     
 }
