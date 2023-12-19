@@ -26,19 +26,48 @@
         //     include_once 'views/panelCarrito.php';
         // }
         
-        public function agregarProducto(){
-            if(!isset($_SESSION['addproducto'])){
-                $_SESSION['addproducto']= array();
-                $carrito = new Pedido(ProductoDAO::getProductID($_POST['id']));
-                array_push($_SESSION['addproducto'],$carrito);
-            }else{
-                $carrito = new Pedido(ProductoDAO::getProductID($_POST['id']));
-                array_push($_SESSION['addproducto'],$carrito);
-            }
+        // public function agregarProducto(){
+        //     if(!isset($_SESSION['addproducto'])){
+        //         $_SESSION['addproducto']= array();
+        //         $carrito = new Pedido(ProductoDAO::getProductID($_POST['id']));
+        //         array_push($_SESSION['addproducto'],$carrito);
+        //     }else{
+        //         $carrito = new Pedido(ProductoDAO::getProductID($_POST['id']));
+        //         array_push($_SESSION['addproducto'],$carrito);
+        //     }
 
+        //     $this->carta();
+        // }
+        
+        public function agregarProducto() {
+            $productoId = $_POST['id'];
+        
+            // Inicializar $_SESSION['addproducto'] si aún no existe
+            if (!isset($_SESSION['addproducto'])) {
+                $_SESSION['addproducto'] = array();
+            }
+        
+            // Verificar si el producto ya está en el carrito
+            $encontrado = false;
+            foreach ($_SESSION['addproducto'] as $carrito) {
+                if ($carrito->getProducto()->getproducto_id() == $productoId) {
+                    // Producto encontrado en el carrito, aumentar la cantidad
+                    $carrito->aumentarCantidad();
+                    $encontrado = true;
+                    break;
+                }
+            }
+        
+            // Si el producto no estaba en el carrito, agregarlo
+            if (!$encontrado) {
+                $carrito = new Pedido(ProductoDAO::getProductID($productoId));
+                $_SESSION['addproducto'][] = $carrito;
+            }
+        
             $this->carta();
         }
-        
+
+
         public function deleteProducto() {
             if (isset($_POST['btn_delete'])) {
                 $producto_id = $_POST['btn_delete'];

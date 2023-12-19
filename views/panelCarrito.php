@@ -71,8 +71,7 @@
           <?php }?>
             <input type="text" placeholder="Introducir código de descuento" style="width: 231px !important; height: 40px !important" />
             <button type="submit" class="fw-semibold" style="width: 128px !important; height: 40px; ">APLICAR</button>
-            <input type="hidden" name="precioFinal" value="<?=CalculadoraPrecios::calculadorPrecioPedido($_SESSION['addproducto'])?>" >
-            <input type="hidden" name="user" value="<?=$_SESSION['user']?>">
+            <input type="hidden" name="precioFinal" value="<?=CalculadoraPrecios::calculadorPrecioPedido($_SESSION['addproducto'])?>">
             <button type="submit" name="precio" id="pass" class="fw-semibold" style="width: 368px !important; height: 40px; margin-top: 16px; ">CONTINUAR</button>
           </form>
           <?php

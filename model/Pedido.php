@@ -42,4 +42,8 @@ Set the value of cantidad*/
 
         return $this;
     }
+
+    public function aumentarCantidad() {
+        $this->cantidad++;
+    }
 }
