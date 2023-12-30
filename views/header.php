@@ -1,3 +1,6 @@
+<?php
+ob_start(); // Place ob_start() at the very beginning of the script to avoid header issues.
+?>
 <div class="bg-black d-flex justify-content-center align-items-center" style="display: flex; justify-content: space-between;">
       <nav class="d-flex justify-content-center align-items-center navbar navbar-expand-lg bg-black"
         style="height: 120px;">

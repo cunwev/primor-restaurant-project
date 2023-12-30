@@ -51,13 +51,12 @@
         public function finalizar(){
             
             $userObj = unserialize($_SESSION['user']);
-            $email = $userObj->getEmail();
             $precioFinal = $_POST['precioFinal'];
             
             // Establece la cookie
+            var_dump($_COOKIE[$_SESSION['iduser']]);
             setcookie($_SESSION['iduser'], $precioFinal, time() + 3600);
-        var_dump($_COOKIE[$_SESSION['iduser']]);
-            // Imprime o manipula el valor directamente
+            header('Location:'.url);
 
         }
     }

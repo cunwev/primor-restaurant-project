@@ -141,4 +141,31 @@ class Usuario {
     }
 }
 
+class UsuarioAdmin extends Usuario {
+    private $permisos_admin;
+
+    public function __construct() {
+        parent::__construct(); // Llama al constructor de la clase padre
+    }
+
+    /**
+     * Get the value of admin
+     */
+    public function getPermisos_admin()
+    {
+        return $this->permisos_admin;
+    }
+
+    /**
+     * Set the value of admin
+     */
+    public function setPermisos_admin($permisos_admin): self
+    {
+        $this->permisos_admin = $permisos_admin;
+
+        return $this;
+    }
+}
+
+
 ?>

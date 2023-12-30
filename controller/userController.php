@@ -17,26 +17,43 @@ class UserController {
     }
 */
 
-    public function userData(){
-        session_start();
-        $userObj = unserialize($_SESSION['user']);
-        $usuario = $userObj->getUsuario();
-        $email = $userObj->getEmail();
-        $nombre = $userObj->getNombre();
-        $apellidos = $userObj->getApellidos();
-        $direccion = $userObj->getDireccion();
-        $telefono = $userObj->getTelefono();
-        include_once 'views/panelLogin.php';
-    }
-
     public function logoutProcess(){
         session_start();
         session_destroy();
         header("Location:".url);
     }
 
-    public function goAdmin(){
-        $allProducts = ProductoDAO::getAllProducts();
-        include_once 'views/panelAdmin.php';
+
+
+    public function goAdmin() {
+        // Obtener el usuario de la sesión
+        $currentUser = unserialize($_SESSION['user']);
+    
+        // Verificar si el usuario es administrador
+        if ($currentUser instanceof UsuarioAdmin) {
+            $allProducts = ProductoDAO::getAllProducts();
+            include_once 'views/panelAdmin.php';
+        } elseif ($currentUser instanceof Usuario) {
+            echo "Acceso no autorizado para usuarios estándar";
+            exit;
+        } else {
+            echo "Objeto/tipo de usuario no reconocido";
+        }
+    }
+
+
+
+    public function mostrarUltimoPedido(){
+        // Obtén el valor de la cookie antes de eliminarla
+        $ultimoPedido = isset($_COOKIE[$_SESSION['iduser']]) ? $_COOKIE[$_SESSION['iduser']] : 'N/A';
+    
+        // Establecer la cookie con tiempo de expiración en el pasado (eliminación)
+        setcookie($_SESSION['iduser'], '', time()-3600);
+        unset($_COOKIE[$_SESSION['iduser']]);
+    
+        // Muestra el mensaje del último pedido después de establecer la cookie
+        echo 'Tu último pedido fue de '.$ultimoPedido.' €';
     }
 }
+
+?>
