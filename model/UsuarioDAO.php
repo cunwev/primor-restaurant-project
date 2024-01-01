@@ -3,9 +3,9 @@
 include_once 'config/database.php';
 include_once 'Usuario.php';
 
-class UsuarioDAO {
+class UsuarioDAO{
 
-    public static function getUserLogin($usuario, $pass) {
+    public static function getUserLogin($usuario, $pass){
         $conn = database::connect();
         $stmt = $conn->prepare("SELECT * FROM CLIENTES WHERE usuario=?");
         $stmt->bind_param("s", $usuario);
@@ -18,12 +18,12 @@ class UsuarioDAO {
             return 2;
         } else {
             $clienteid = $usuarioObj->getClienteId();
-
+            
             $stmt = $conn->prepare("SELECT * FROM CREDENCIALES WHERE cliente_id=?");
             $stmt->bind_param("i", $clienteid);
             $stmt->execute();
             $result = $stmt->get_result();
-
+            
             if ($result->num_rows === 0) {
                 return 2;
             } else {
@@ -63,16 +63,25 @@ class UsuarioDAO {
                 
                 // Redirigir según el tipo de usuario
                 if ($row['permisos_admin'] === "1") {
-                    header('Location:'.url.'?controller=user&action=goAdmin');
+                    header('Location:' . url . '?controller=user&action=goAdmin');
                 } else {
-                    header('Location:'.url.'?controller=user&action=login');
-                    var_dump($row['permisos_admin']);
+                    header('Location:' . url . '?controller=user&action=login');
                 }
                 
                 return 3;
             }
         }
     }
-}
 
-?>
+    // CUIDADO - Elimina una cuenta de la BBDD segun el cliente_id (excepto administradores)
+    public static function eliminarCuenta($usuario_id) {
+            // Obtener la conexión a la base de datos (ajusta según tu implementación)
+            $conn = database::connect();
+    
+            // Verificar si el usuario existe antes de eliminar la cuenta
+            $query = "DELETE FROM CLIENTES WHERE cliente_id=?";
+            $stmt = $conn->prepare($query);
+            $stmt->bind_param('i', $usuario_id);
+            $stmt->execute();
+    }
+}

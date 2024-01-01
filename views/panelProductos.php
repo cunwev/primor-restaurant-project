@@ -27,14 +27,15 @@
                             </div>
                         </a>
 
-                        <form action="<?=url.'?controller=producto&action=agregarProducto'?>" method="post">
+                        <form action="<?= url . '?controller=producto&action=agregarProducto' ?>" method="post">
+                            <input type="hidden" name="id" value="<?= $product->getproducto_id() ?>">
+                            <input type="hidden" name="categoria" value="<?= $product->getNombreCategoria() ?>">
+                            <?php echo $product->getNombreCategoria() . "<br>"; ?>
                             <img src="assets/images/productos/<?= $product->getimagen() ?>" alt="imagen de <?= $product->getnombre() ?>" width="200px" height="200px">
-                            <input type="hidden" name="id" value="<?=$product->getproducto_id()?>">
-                            <button type="submit" class="fw-semibold btn-add-producto" style=" margin-top: 16px; width: 220px; height: 40px">AÑADIR AL CARRITO</button>
+                            <button type="submit" class="fw-semibold btn-add-producto" style="margin-top: 16px; width: 220px; height: 40px">AÑADIR AL CARRITO</button>
                         </form>
 
-                        
-                        
+
                         <p>TENDENCIAS</p>
                         <?= $product->getnombre() ?>
 

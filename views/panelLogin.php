@@ -44,10 +44,6 @@
     </div>
   <?php
   } else {
-
-    // Tu código aquí
-    
-
     // Verificar si 'iduser' está definido en $_SESSION
     if (isset($_COOKIE[$_SESSION['iduser']])) {
       require_once 'controller/UserController.php';
@@ -62,8 +58,11 @@
     <form class="col-6 ps-5" action="<?= url . '?controller=user&action=logout' ?>" method="post">
       <button class="btn">Modificar datos</button>
     </form>
-    <form class="col-6 ps-5" action="<?= url . '?controller=user&action=logout' ?>" method="post">
+    <!-- <form class="col-6 ps-5" action="<?= url . '?controller=user&action=logout' ?>" method="post">
       <button class="btn">Eliminar cuenta</button>
+    </form> -->
+    <form class="col-6 ps-5" action="<?= url . '?controller=user&action=eliminarCuenta' ?>" method="post">
+      <button class="btn" onclick="return confirm('¿Estás seguro de que quieres eliminar tu cuenta?');">Eliminar cuenta</button>
     </form>
     <form class="col-6 ps-5" action="<?= url . '?controller=user&action=logoutProcess' ?>" method="post">
       <button class="btn">Cerrar sesión</button>

@@ -1,4 +1,4 @@
 <?php
-define ('url', "http://localhost/PRIMOR/index.php");
-define ('action_default', 'index');
+    define ('url', "http://localhost/PRIMOR/index.php");
+    define ('action_default', 'index');
 ?>

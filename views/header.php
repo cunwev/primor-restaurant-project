@@ -6,15 +6,11 @@ ob_start(); // Place ob_start() at the very beginning of the script to avoid hea
         style="height: 120px;">
         <div class="container-xl">
         <a class="nav-link text-white" href="http://localhost/PRIMOR/index.php?controller=producto">
-          <div class=""
-            style="width: 190px; height: 50px; background-image: url('logo_primor.svg'); background-size:cover; background-position:center; background-repeat:no-repeat;">
-          </div>
+          <div class="" style="width: 190px; height: 50px; background-image: url('assets/images/logo_primor.svg'); background-size:cover; background-position:center; background-repeat:no-repeat;"></div>
         </a>
           <a class="navbar-brand" href="#"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
           </button>
 
           <div class="collapse navbar-collapse align-items-center" id="navbarSupportedContent">
@@ -36,7 +32,14 @@ ob_start(); // Place ob_start() at the very beginning of the script to avoid hea
             <a class="nav-link text-white" href="http://localhost/PRIMOR/index.php?controller=user&action=login"><img src="assets/images/login.png" width="30" height="30" /></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="http://localhost/PRIMOR/index.php?controller=cesta&action=cesta"><img src="assets/images/cesta.png" width="30" height="30" /></a>
+            <a class="nav-link text-white" href="http://localhost/PRIMOR/index.php?controller=cesta&action=cesta"><img src="assets/images/cesta.png" width="30" height="30" />
+            <?php
+              if (isset($_SESSION['addproducto'])) {
+                // Imprime el conteo de elementos en 'addproducto', es decir, en cesta.
+                echo '<p style="position: absolute; color: white; font-weight: bold; background-color: red; text-align: center; transform: translateX(90%) translateY(-160%); border-radius: 100px;padding-left: 5px; padding-right: 5px;">'.count($_SESSION['addproducto']).'</p>';
+              }
+            ?>
+            </a> 
           </li>
         </ul>
       </nav>
@@ -59,7 +62,7 @@ ob_start(); // Place ob_start() at the very beginning of the script to avoid hea
               <a class="nav-link text-white" href="http://localhost/PRIMOR/index.php?controller=producto&action=carta"><button class="btn text-white" type="submit">CARTA</button></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="http://localhost/PRIMOR/index.php?controller=cesta&action=cesta"><button class="btn text-white" type="submit">CARRITO</button></a>
+              <a class="nav-link text-white" href="http://localhost/PRIMOR/index.php?controller=cesta&action=cesta"><button class="btn text-white" type="submit">CESTA</button></a>
             </li>
           </ul>
         </div>
