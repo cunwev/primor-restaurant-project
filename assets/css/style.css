@@ -415,7 +415,7 @@
 .container-producto{
     border: 1px solid #EBEBEB;  width: 246px; margin-bottom: 40px;
 }
-.container-producto:hover {
+.container-producto:hover .btn-add-producto {
     visibility: visible;
 }
 
