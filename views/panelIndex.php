@@ -11,10 +11,10 @@
   <header>
     <?php include_once "views/header.php" ?>
   </header>
-  <br>
+
   <!----------------------------------------------------------------------------------------------------->
-  <br>
-  <div class="container-xl mx-52 p-0">
+
+  <div class="container-xl mx-52 p-0 mt-5 mb-4">
     <div class="bg-image row m-0 p-0">
       <div class="col-md-6 m-0 p-0">
         <div class="banner-a mgright mgreset mgbottom" style="background-image: url('assets/images/banner1_1.PNG')">
@@ -27,11 +27,11 @@
       </div>
     </div>
   </div>
-  <br>
+
   <!---------------------------------------------------------------------------------------------------------------------------------------------->
-  <br>
-  <h2 class="p-0 m-0 fw-semibold text-center" style="font-size: 20px;">CATEGORÍAS EN TENDENCIA</h2>
-  <br>
+
+  <h2 class="p-0 mx-0 mt-5 mb-4 fw-semibold text-center" style="font-size: 20px;">CATEGORÍAS EN TENDENCIA</h2>
+
 
   <div class="container-xl p-0">
     <div class="row m-0 p-0 row-menu-home">
@@ -106,9 +106,9 @@
 
     </div>
   </div>
-  <br>
+
   <!---------------------------------------------------------------------------------------------------------------------------------------------->
-  <br>
+
   <div class="bg-black">
     <div class="container-xl mx-52 bg-black" style="padding: 40px 0px 40px 0px">
       <div class="row p-0 reverse" style="margin: 0px 0px 40px 0px; display: flex; justify-content: space-between">
@@ -117,10 +117,10 @@
         </div>
 
         <div class="col-12 col-md-4 m-0 p-0 text-center d-flex">
-          <div class="d-flex flex-column align-items-center justify-content-center mgreset" style="margin-left: 11%;">
+          <div class="d-flex flex-column align-items-center justify-content-center mgreset p-4">
             <h3 class="p-0 m-0 mb-5 text-white">MER À VERSAILLES</h3>
-            <p class="text-white">"Desde el mar hasta Versalles, una brisa refrescante y con sabor floral en cadabocado"</p>
-            <p class="text-white">Descubre una combinación de platos inspirados más allá de las olas; desde Mousse demarisco con mayonesa derosa hasta reducción de Bouillabaisse con algas nori.</p>
+            <p class="text-white text-center">"Desde el mar hasta Versalles, una brisa refrescante y con sabor floral en cadabocado"</p>
+            <p class="text-white text-center">Descubre una combinación de platos inspirados más allá de las olas; desde Mousse demarisco con mayonesa derosa hasta reducción de Bouillabaisse con algas nori.</p>
             <div class="descubrir d-inline-block d-flex align-items-end display-mode-off">
               <p class="p-0 m-0 fw-semibold align-self-end text-white">Descubrir</p>
             </div>
@@ -140,7 +140,7 @@
       </div>
     </div>
   </div>
-  <br>
+
   <!---------------------------------------------------------------------------------------------------------------------------------------------->
   <div class="container-xl">
 
@@ -172,9 +172,9 @@
               <p class="product-name"><?= $product->getnombre() ?></p>
             </div>
             <div class="text-center my-4">
-              <a href="#" class="btn-product-size">75g</a>
-              <a href="#" class="btn-product-size">100g</a>
-              <a href="#" class="btn-product-size">150g</a>
+              <a class="btn-product-size">75g</a>
+              <a class="btn-product-size">100g</a>
+              <a class="btn-product-size">150g</a>
             </div>
 
             <div class="m-3">
