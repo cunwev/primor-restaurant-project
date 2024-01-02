@@ -36,7 +36,7 @@ ob_start(); // Place ob_start() at the very beginning of the script to avoid hea
             <?php
               if (isset($_SESSION['addproducto'])) {
                 // Imprime el conteo de elementos en 'addproducto', es decir, en cesta.
-                echo '<p style="position: absolute; color: white; font-weight: bold; background-color: red; text-align: center; transform: translateX(90%) translateY(-160%); border-radius: 100px;padding-left: 5px; padding-right: 5px;">'.count($_SESSION['addproducto']).'</p>';
+                echo '<div class="contador-cesta"><p class="m-0">'.count($_SESSION['addproducto']).'</p></div>';
               }
             ?>
             </a> 

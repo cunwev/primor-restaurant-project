@@ -47,40 +47,52 @@
     // Verificar si 'iduser' está definido en $_SESSION
     if (isset($_COOKIE[$_SESSION['iduser']])) {
       require_once 'controller/UserController.php';
-
       // Llama a la función mostrarUltimoPedido
       UserController::mostrarUltimoPedido();
     }
-    ob_end_flush();
   ?>
 
+    <h2>Bienvenido/a <?=unserialize($_SESSION['user'])->getNombre()?></h2>
     <!--Usuario-->
-    <form class="col-6 ps-5" action="<?= url . '?controller=user&action=logout' ?>" method="post">
-      <button class="btn">Modificar datos</button>
-    </form>
-    <!-- <form class="col-6 ps-5" action="<?= url . '?controller=user&action=logout' ?>" method="post">
-      <button class="btn">Eliminar cuenta</button>
-    </form> -->
-    <form class="col-6 ps-5" action="<?= url . '?controller=user&action=eliminarCuenta' ?>" method="post">
-      <button class="btn" onclick="return confirm('¿Estás seguro de que quieres eliminar tu cuenta?');">Eliminar cuenta</button>
-    </form>
-    <form class="col-6 ps-5" action="<?= url . '?controller=user&action=logoutProcess' ?>" method="post">
-      <button class="btn">Cerrar sesión</button>
-    </form>
-
-    <!--UsuarioAdmin-->
-    <form class="col-6 ps-5" action="<?= url . '?controller=user&action=goAdmin' ?>" method="post">
-      <?php
-      // Obtener el usuario de la sesión
-      $currentUser = unserialize($_SESSION['user']);
-      // Verificar si el usuario es administrador
-      if ($currentUser instanceof UsuarioAdmin) {
-        // Se imprime por pantalla el botón de acceso a Administrar productos
-        echo '<button class="btn">Administrar productos</button>';
-      }
-      ?>
-    </form>
-
+    <div class="container-xl" style="height: 50%">
+      <div class="row">
+        <div class="col-4">
+          <form action="<?= url . '?controller=user&action=logout' ?>" method="post">
+            <button class="btn">Modificar datos</button>
+          </form>
+          <!-- <form class="col-6 ps-5" action="<?= url . '?controller=user&action=logout' ?>" method="post">
+            <button class="btn">Eliminar cuenta</button>
+          </form> -->
+          <form  action="<?= url . '?controller=user&action=eliminarCuenta' ?>" method="post">
+            <button class="btn" onclick="return confirm('¿Estás seguro de que quieres eliminar tu cuenta?');">Eliminar cuenta</button>
+          </form>
+          <form action="<?= url . '?controller=user&action=logoutProcess' ?>" method="post">
+            <button class="btn">Cerrar sesión</button>
+          </form>
+          <!--UsuarioAdmin-->
+          <form action="<?= url . '?controller=user&action=goAdmin' ?>" method="post">
+            <?php
+            // Obtener el usuario de la sesión
+            $currentUser = unserialize($_SESSION['user']);
+            // Verificar si el usuario es administrador
+            if ($currentUser instanceof UsuarioAdmin) {
+              // Se imprime por pantalla el botón de acceso a Administrar productos
+              echo '<button class="btn">Administrar productos</button>';
+            }
+            ?>
+          </form>
+        </div>
+      
+        <div class="col-8">
+          <?php $currentUser = unserialize($_SESSION['user']);?>
+          <p>Nombre: <?=$currentUser->getNombre();?></p>
+          <p>Apellidos: <?=$currentUser->getApellidos();?></p>
+          <p>Correo electrónico: <?=$currentUser->getEmail();?></p>
+          <p>Dirección: <?=$currentUser->getDireccion();?></p>
+          <p>Teléfono: <?=$currentUser->getTelefono();?></p>
+        </div>
+      </div>
+    </div>
   <?php } ?>
   <!-------------------------------------------------------------------------------->
   <br>

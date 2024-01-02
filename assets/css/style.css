@@ -8,8 +8,102 @@
     src: url('https://fonts.googleapis.com/css2?family=Muli:wght@300;400;700&display=swap') format('woff2');
 }
 
-body {
+/* body {
     font-family: 'Muli', sans-serif;
+} */
+
+.page-title,
+.cart-subtitle,
+.cart-item-price,
+.cart-item-categoria,
+.cart-item,
+.cart-subtotal,
+.cart-total {
+    text-align: start;
+    letter-spacing: normal;
+}
+
+.page-title {
+    font-size: 30px;
+    line-height: 48px;
+}
+
+.cart-subtitle {
+    font-size: 25px;
+    line-height: 40px;
+}
+
+.cart-item-price {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: bold;
+}
+
+.cart-item-categoria {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: bold;
+}
+
+.cart-item {
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.cart-subtotal {
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 600;
+}
+
+.cart-total {
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 600;
+}
+
+.cart-button {
+    font-size: 14px;
+    line-height: 22px;
+    background: none;
+    border: none;
+    color: #ff2121;
+    cursor: pointer;
+}
+
+.cart-button-cantidad {
+    background: none;
+    border: none;
+    font-size: 20px;
+}
+
+.cart-banner-subtitle {
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+.product-price {
+    font-size: 22px;
+    line-height: 22px;
+    font-weight: 700;
+}
+
+.product-categoria {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 700;
+}
+
+.product-name {
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.carta-title {
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 700;
 }
 
 /*Variables CSS*/
@@ -25,9 +119,10 @@ body {
     .peq-header-iconos {
         visibility: hidden !important
     }
+
     .display-mode-off {
         visibility: hidden !important
-    }  
+    }
 }
 
 .btn:hover {
@@ -46,15 +141,28 @@ body {
     background-size: 23px;
 }
 
+.contador-cesta {
+    position: absolute;
+    color: white;
+    font-weight: semi-bold;
+    background-color: red;
+    text-align: center;
+    transform: translateX(90%) translateY(-150%);
+    border-radius: 100px;
+    padding-left: 6px;
+    padding-right: 6px;
+    font-size: 14px;
+}
 
 /* ----- BANNER PRIMERO ----- */
 
 @media only screen and (max-width: 600px) {
 
-    .mgreset { 
+    .mgreset {
         margin-right: 0px !important;
         margin-left: 0px !important;
     }
+
     .mgbottom {
         margin-bottom: -80px !important;
     }
@@ -70,16 +178,18 @@ body {
 
 .banner-a {
     height: 309px;
-    background-size:contain; 
-    background-position:center; 
-    background-repeat:no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
-    .banner-a:nth-child(1) {
-        background-image: url('../../banner1_1.PNG');
-    }
-        .banner-a:nth-child(2) {
-            background-image: url('../../banner1_2.PNG');
-        }
+
+.banner-a:nth-child(1) {
+    background-image: url('../../banner1_1.PNG');
+}
+
+.banner-a:nth-child(2) {
+    background-image: url('../../banner1_2.PNG');
+}
 
 
 
@@ -92,46 +202,54 @@ body {
 }
 
 .row-menu-home {
-    margin-bottom: 34px !important; 
-    display: flex; 
+    margin-bottom: 34px !important;
+    display: flex;
     justify-content: space-between
 }
 
 .item-menu-home {
-    width:100%; 
-    height: 337px; 
-    background-size:contain;
-    background-position:center;
-    background-repeat:no-repeat;
+    width: 100%;
+    height: 337px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
-    .item-menu-home:nth-child(1) {
-        background-image: url('../../menu_imagen1.PNG');
-    }
-        .item-menu-home:nth-child(2) {
-            background-image: url('../../menu_imagen2.PNG');
-        }
-            .item-menu-home:nth-child(3) {
-                background-image: url('../../menu_imagen3.PNG');
-            }
-                .item-menu-home:nth-child(4) {
-                    background-image: url('../../menu_imagen4.PNG');
-                }
-                    .item-menu-home:nth-child(5) {
-                        background-image: url('../../menu_imagen5.PNG');
-                    }
-                        .item-menu-home:nth-child(6) {
-                            background-image: url('../../menu_imagen6.PNG');
-                        }
-                            .item-menu-home:nth-child(7) {
-                                background-image: url('../../menu_imagen7.PNG');
-                            }
-                                .item-menu-home:nth-child(8) {
-                                    background-image: url('../../menu_imagen8.PNG');
-                                }
+
+.item-menu-home:nth-child(1) {
+    background-image: url('../../menu_imagen1.PNG');
+}
+
+.item-menu-home:nth-child(2) {
+    background-image: url('../../menu_imagen2.PNG');
+}
+
+.item-menu-home:nth-child(3) {
+    background-image: url('../../menu_imagen3.PNG');
+}
+
+.item-menu-home:nth-child(4) {
+    background-image: url('../../menu_imagen4.PNG');
+}
+
+.item-menu-home:nth-child(5) {
+    background-image: url('../../menu_imagen5.PNG');
+}
+
+.item-menu-home:nth-child(6) {
+    background-image: url('../../menu_imagen6.PNG');
+}
+
+.item-menu-home:nth-child(7) {
+    background-image: url('../../menu_imagen7.PNG');
+}
+
+.item-menu-home:nth-child(8) {
+    background-image: url('../../menu_imagen8.PNG');
+}
 
 .sub-item-menu-home {
-    max-width: 100%; 
-    padding-bottom: 3px; 
+    max-width: 100%;
+    padding-bottom: 3px;
     border-bottom: 1px solid #FF2121;
 }
 
@@ -151,7 +269,7 @@ body {
     .centrar-mini {
         justify-content: center !important;
     }
-    
+
     .mgtopbottom {
         margin-top: -25px !important;
         margin-bottom: -250px !important;
@@ -161,79 +279,104 @@ body {
 .main-banner-b {
     height: 458px;
     background-image: url('../../banner2.PNG');
-    background-size:contain;
+    background-size: contain;
 
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
 }
 
 .banner-b {
     width: 32%;
     height: 404px;
-    background-size:contain;
-    background-position:center;
-    background-repeat:no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
-    .banner-b:nth-child(1) {
-        background-image: url('../../banner2_1.PNG');
-    }
-        .banner-b:nth-child(2) {
-            background-image: url('../../banner2_2.PNG');
-        }
-            .banner-b:nth-child(3) {
-                background-image: url('../../banner2_3.PNG');
-            }
+
+.banner-b:nth-child(1) {
+    background-image: url('../../banner2_1.PNG');
+}
+
+.banner-b:nth-child(2) {
+    background-image: url('../../banner2_2.PNG');
+}
+
+.banner-b:nth-child(3) {
+    background-image: url('../../banner2_3.PNG');
+}
 
 .descubrir {
-    padding-bottom: 3px; 
-    border-bottom: 1.5px solid #FF2121; 
+    padding-bottom: 3px;
+    border-bottom: 1.5px solid #FF2121;
     height: 43px;
 }
 
 
 /* ----- PRODUCTOS ----- */
 
-.btn-cantidad {
-	background-color:transparent;
-	border:1px solid #a0a0a0;
-	cursor:pointer;
-	color:#a0a0a0;
-	font-family:Arial;
+
+.btn-product-size {
+    width: 80px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid #a0a0a0;
+    cursor: pointer;
+    color: #a0a0a0;
+    font-family: Arial;
     padding: 10px;
-	font-size:17px;
+    font-size: 13px;
+    line-height: 20px;
     text-align: center;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #ffffff;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ffffff;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
-    .btn-cantidad:hover {
-        background-color:transparent !important; 
-        border:1px solid #000000 !important;
-    }
-        .btn-cantidad:active {
-            top:1px;
-            border:1px solid #000000 !important;
-        }
+
+.btn-product-size:hover {
+    background-color: transparent !important;
+    border: 1px solid #000000 !important;
+    color: #000000;
+}
+
+.btn-product-size:active {
+    top: 1px;
+    border: 1px solid #000000 !important;
+}
+
+.info-product {
+    height: 18%;
+    padding-top: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-top: 1px solid #EBEBEB;
+    border-bottom: 1px solid #EBEBEB;
+}
+
+
 
 
 /* ----- FORMULARIO ----- */
 
 .btn-login {
-    width: 600px !important; 
-    height: 40px !important; 
+    width: 600px !important;
+    height: 40px !important;
     padding: 4px 32px 4px 32px;
     background-color: black;
     color: white;
     transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
     text-decoration: solid;
 }
-    .btn-login:hover {
-        background-color: white;
-        color: black;
-    }
+
+.btn-login:hover {
+    background-color: white;
+    color: black;
+}
 
 /* ----- PRODUCTOS ----- */
 
 .btn-fav {
     z-index: 5;
+    margin-top: 5px;
+    margin-right: 5px;
     padding: 0px;
     display: flex !important;
     justify-content: flex-end !important;
@@ -244,33 +387,88 @@ body {
     transition: background-image 0.5s ease-in-out;
     width: 30px;
     height: 30px;
-  }
-  
-  .btn-fav:hover {
+}
+
+.btn-fav:hover {
     background-image: url('/primor/assets/images/icon_favorito_hover.png') !important;
-  }
+}
 
 
 
 
 
-
-  .container-producto {
-  }
-  
-  .btn-add-producto {
+.btn-add-producto {
+    margin-top: 16px; width: 220px; height: 40px;
     visibility: hidden;
     transition: visibility 1s ease-in-out;
-  }
-  
-  .container-producto:hover .btn-add-producto {
-    visibility: visible;
+    background-color: black;
+    color: white;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    text-decoration: solid;
+}
 
-  }
+.btn-add-producto:hover {
+    background-color: white;
+    color: black;
+}
+
+.container-producto{
+    border: 1px solid #EBEBEB;  width: 246px; margin-bottom: 40px;
+}
+.container-producto:hover {
+    visibility: visible;
+}
 
 .carrito-vacio {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     background-image: url('/primor/assets/images/carrito_vacio.PNG') !important;
+}
+
+
+.btn-a {
+    width: 600px !important;
+    height: 40px !important;
+    padding: 4px 32px 4px 32px;
+    background-color: white;
+    color: black;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    text-decoration: solid;
+}
+
+.btn-a:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+.btn-b {
+    width: 600px !important;
+    height: 40px !important;
+    padding: 4px 32px 4px 32px;
+    background-color: white;
+    color: black;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    text-decoration: solid;
+}
+
+.btn-b:hover {
+    background-color: white;
+    color: black;
+}
+
+.btn-c {
+    width: 600px !important;
+    height: 40px !important;
+    padding: 4px 32px 4px 32px;
+    background-color: #FF2121;
+    color: white;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    text-decoration: solid;
+    border: 2px solid #FF2121;
+}
+
+.btn-c:hover {
+    background-color: white;
+    color: #FF2121;
 }

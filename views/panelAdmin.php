@@ -20,54 +20,8 @@
   <br>
   <!----------------------------------------------------------------------------------------------------->
 
-
-
-
-
-
-
-  <button id="botonMostrarOcultar">Mostrar/Ocultar</button>
-    <span id="contenido" class="contenido-oculto">
-        <!-- Contenido del span -->
-        <p>A</p>
-    </span>
-
-    <script>
-        // JavaScript para manejar el clic en el botón
-        document.getElementById('botonMostrarOcultar').addEventListener('click', function() {
-            var contenido = document.getElementById('contenido');
-            
-            // Alternar entre mostrar y ocultar el contenido del span
-            if (contenido.style.display === 'none') {
-                contenido.style.display = 'inline'; // Puedes cambiar esto a 'block' si prefieres
-            } else {
-                contenido.style.display = 'none';
-            }
-        });
-    </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <br>
-        <h1>Bienvenido/a admin.</h1>
+        <h2>Bienvenido/a admin.</h2>
         <br>
         <div class="container-xl">
 

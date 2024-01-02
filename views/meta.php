@@ -8,5 +8,5 @@
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet" type="text/css" media="screen">
   <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="shortcut icon" href="favicon32.ico" type="image/x-icon" size="32x32">
-  <link rel="shortcut" href="/favicon32.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/images/favicon32.ico" type="image/x-icon" size="32x32">
+  <link rel="shortcut" href="assets/images/favicon32.ico" type="image/x-icon">
