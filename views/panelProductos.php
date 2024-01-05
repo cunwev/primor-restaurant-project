@@ -21,7 +21,7 @@
         <div class="row justify-content-between mx-3">
             <?php foreach ($allProducts as $product) {
                 if ($product->getcategoria_id() < 10) { ?>
-                    <div class="col-md-2 justify-content-center p-0 container-producto">
+                    <div class="col-md-2 justify-content-center p-0 main-container-product">
 
                         <a href="#" class="d-flex flex-column align-items-end ms-auto">
                             <div class="bg-image btn-fav">
@@ -35,7 +35,7 @@
                                 <button type="submit" class="fw-semibold btn-add-producto">AÑADIR AL CARRITO</button>
                             </form>
                         </div>
-                        <div class="info-product">
+                        <div class="sub-container-product">
                             <!-- Da el nombre de la categoria en mayusculas y el nombre del producto -->
                             <p class="product-categoria"><?= strtoupper($product->getNombreCategoria()) ?></p>
                             <p class="product-name"><?= $product->getnombre() ?></p>
@@ -65,7 +65,7 @@
         <div class="row justify-content-between mx-3">
             <?php foreach ($allProducts as $product) {
                 if ($product->getcategoria_id() == 10) { ?>
-                    <div class="col-md-2 justify-content-center p-0 container-producto">
+                    <div class="col-md-2 justify-content-center p-0 main-container-product">
 
                         <a href="#" class="d-flex flex-column align-items-end ms-auto">
                             <div class="bg-image btn-fav">
@@ -79,7 +79,7 @@
                                 <button type="submit" class="fw-semibold btn-add-producto">AÑADIR AL CARRITO</button>
                             </form>
                         </div>
-                        <div class="info-product">
+                        <div class="sub-container-product">
                             <!-- Da el nombre de la categoria en mayusculas y el nombre del producto -->
                             <p class="product-categoria"><?= strtoupper($product->getNombreCategoria()) ?></p>
                             <p class="product-name"><?= $product->getnombre() ?></p>
@@ -109,7 +109,7 @@
         <div class="row justify-content-between mx-3">
             <?php foreach ($allProducts as $product) {
                 if ($product->getcategoria_id() == 11) { ?>
-                    <div class="col-md-2 justify-content-center p-0 container-producto">
+                    <div class="col-md-2 justify-content-center p-0 main-container-product">
 
                         <a href="#" class="d-flex flex-column align-items-end ms-auto">
                             <div class="bg-image btn-fav">
@@ -123,7 +123,7 @@
                                 <button type="submit" class="fw-semibold btn-add-producto">AÑADIR AL CARRITO</button>
                             </form>
                         </div>
-                        <div class="info-product">
+                        <div class="sub-container-product">
                             <!-- Da el nombre de la categoria en mayusculas y el nombre del producto -->
                             <p class="product-categoria"><?= strtoupper($product->getNombreCategoria()) ?></p>
                             <p class="product-name"><?= $product->getnombre() ?></p>
@@ -144,8 +144,6 @@
     </div>
 </body>
 
-<footer class="border-black text-center text-white pt-1" style="background-color: #ffffff;">
-    <?php include_once "views/footer.php" ?>
-</footer>
 
+    <?php include_once "views/footer.php" ?>
 </html>

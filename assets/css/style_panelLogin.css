@@ -1,0 +1,68 @@
+/* LOGIN - panelLogin.php */
+
+/* --- BOTONES -------------------------------------------------- */
+
+.btn-login {
+    width: 600px;
+    height: 40px;
+    padding: 4px 32px 4px 32px;
+    background-color: black;
+    color: white;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    text-decoration: solid;
+}
+    .btn-login:hover {
+        background-color: white;
+        color: black;
+    }
+
+/* --- BANNERS -------------------------------------------------- */
+
+
+
+
+/* --- CONTENEDORES -------------------------------------------------- */
+
+
+
+/* --- OTROS -------------------------------------------------- */
+
+.label-text-login {
+    margin-bottom:4px; 
+    width: 600px; 
+    height: 22px;
+    font-size: 14px;
+}
+
+.input-text-login {
+    width: 600px; 
+    height: 40px; 
+    padding-left: 16px; 
+    padding-right: 16px; 
+    margin-bottom: 16px;
+}
+
+
+
+/* --- VINCULADO A SCRIPT -------------------------------------------------- */
+
+.container-login-password {
+position: relative;
+display: inline-block; /* Para que el contenedor solo tenga el ancho de su contenido */
+}
+
+.btn-login-password {
+font-size: 14px;
+position: absolute;
+top: 33%; /* Centra verticalmente */
+right: 5px; /* Alinea a la derecha con un pequeño margen */
+transform: translateY(-50%); /* Ajusta para centrar verticalmente */
+background: none;
+border: none;
+cursor: pointer;
+transition: color 0.5s ease; /* Agregamos una transición para suavizar el cambio de color */
+}
+
+.btn-login-password:hover, .btn-login-password:active {
+  color: #f7f7f7; /* Cambia el color cuando está activo (haciendo clic) */
+}
