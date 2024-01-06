@@ -64,8 +64,9 @@
 
         <div class="col-sm-4">
           <div class="cart-summary-container">
-            <p class="cart-subtotal">Subtotal</p>
-            <p class="cart-total">Total del pedido <?= CalculadoraPrecios::calculadorPrecioPedido($_SESSION['addproducto']) . " €" ?></p>
+            <p class="cart-subtotal">Subtotal <?= CalculadoraPrecios::calculadorPrecioPedido($_SESSION['addproducto']) . " €" ?></p>
+            <p class="cart-total">Total del pedido <?= round(CalculadoraPrecios::calculadorPrecioPedido($_SESSION['addproducto']) * 1.10, 2) . " € " ?></p>
+            <p class="cart-banner-text-b"><?= round(CalculadoraPrecios::calculadorPrecioPedido($_SESSION['addproducto']) * 0.10, 2) . " € " ?> (10% IVA incl.)</p>
 
             <?php if (!isset($_SESSION['user'])) { ?>
               <form class="p-2" action="<?= url . '?controller=user&action=login' ?>" method="post">
@@ -74,7 +75,7 @@
                 <?php } ?>
                 <input class="input-text-descuento" type="text" placeholder="Introducir código de descuento"/>
                 <button type="submit" class="fw-semibold btn-a btn-cart-aplicar">APLICAR</button>
-                <input type="hidden" name="precioFinal" value="<?= CalculadoraPrecios::calculadorPrecioPedido($_SESSION['addproducto']) ?>">
+                <input type="hidden" name="precioFinal" value="<?= round(CalculadoraPrecios::calculadorPrecioPedido($_SESSION['addproducto']) * 1.10, 2) ?>">
                 <button type="submit" name="precio" id="pass" class="fw-semibold btn-c btn-cart-tramitar">TRAMITAR PEDIDO (<?= count($_SESSION['addproducto']); ?> artículos)</button>
                 </form>
 

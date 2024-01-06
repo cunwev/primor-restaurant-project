@@ -72,4 +72,36 @@ class UserController{
             session_destroy();
             header("Location:" . url); // Puedes redirigir a donde quieras después de eliminar la cuenta
     }
+    
+    public function register() {
+        include 'views/panelRegister.php';
+    }
+
+    public function registrar() {
+        // Recibir los datos del formulario
+        $usuario = $_POST['email'];
+        $password = $_POST['password'];
+        $email = $_POST['email'];
+        $nombre = $_POST['nombre'];
+        $apellidos = $_POST['apellidos'];
+        $direccion = $_POST['direccion'];
+        $telefono = $_POST['telefono'];
+
+        // Llamar al método para registrar usuario en la base de datos
+        $resultado = UsuarioDAO::registrarUsuario($usuario, $password, $email, $nombre, $apellidos, $direccion, $telefono);
+
+        // Verificar el resultado y tomar acciones
+        switch ($resultado) {
+            case 0:
+                echo "Registro exitoso. Puedes iniciar sesión ahora.";
+                break;
+            case 1:
+                echo "El usuario ya existe. Por favor, elige otro nombre de usuario.";
+                break;
+            case 2:
+                echo "Error al registrar. Por favor, inténtalo de nuevo.";
+                break;
+            // Otros casos según tus necesidades
+        }
+    }
 }

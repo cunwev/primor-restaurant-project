@@ -62,9 +62,6 @@
           <form action="<?= url . '?controller=user&action=logout' ?>" method="post">
             <button class="btn">Modificar datos</button>
           </form>
-          <!-- <form class="col-6 ps-5" action="<?= url . '?controller=user&action=logout' ?>" method="post">
-            <button class="btn">Eliminar cuenta</button>
-          </form> -->
           <form  action="<?= url . '?controller=user&action=eliminarCuenta' ?>" method="post">
             <button class="btn" onclick="return confirm('¿Estás seguro de que quieres eliminar tu cuenta?');">Eliminar cuenta</button>
           </form>
@@ -80,6 +77,17 @@
             if ($currentUser instanceof UsuarioAdmin) {
               // Se imprime por pantalla el botón de acceso a Administrar productos
               echo '<button class="btn">Administrar productos</button>';
+            }
+            ?>
+          </form>
+          <form action="" method="post">
+            <?php
+            // Obtener el usuario de la sesión
+            $currentUser = unserialize($_SESSION['user']);
+            // Verificar si el usuario es administrador
+            if ($currentUser instanceof UsuarioAdmin) {
+              // Se imprime por pantalla el botón de acceso a Administrar productos
+              echo '<button class="btn">Administrar usuarios</button>';
             }
             ?>
           </form>

@@ -5,22 +5,6 @@ include_once 'Producto.php';
 
 class ProductoDAO {
 
-    // public static function getAllProducts(){
-    //     $conexion = Database::connect();
-    //     $stmt = $conexion->query("SELECT p.*, c.nombre as nombre_categoria FROM productos p
-    //     JOIN categorias c ON p.categoria_id = c.categoria_id");
-    //     $productos = [];
-
-    //     while ($obj = $stmt->fetch_object('Producto')) {
-    //         // Setear el nombre de la categoría en el objeto Producto
-    //         $obj->setNombreCategoria($obj->nombre_categoria);
-    //         $productos[] = $obj;
-    //     }
-
-    //     return $productos;
-    // }
-    
-
     public static function getAllProducts() {
         $conexion = Database::connect();
         $stmt = $conexion->query("SELECT p.*, c.nombre as nombre_categoria FROM productos p
