@@ -54,11 +54,20 @@
     }
   ?>
 
-    <h2>Bienvenido/a <?=unserialize($_SESSION['user'])->getNombre()?></h2>
+
     <!--Usuario-->
     <div class="container-xl" style="height: 50%">
       <div class="row">
-        <div class="col-4">
+        <h2 class="p-0 mx-0 mt-5 mb-4 simple-title">Bienvenido/a <?=unserialize($_SESSION['user'])->getNombre()?></h2>
+        <div class="col-7 col-sm-4 p-3 m-4 bg-secondary">
+          <?php $currentUser = unserialize($_SESSION['user']);?>
+          <p>Nombre: <?=$currentUser->getNombre();?></p>
+          <p>Apellidos: <?=$currentUser->getApellidos();?></p>
+          <p>Correo electrónico: <?=$currentUser->getEmail();?></p>
+          <p>Dirección: <?=$currentUser->getDireccion();?></p>
+          <p>Teléfono: <?=$currentUser->getTelefono();?></p>
+        </div>
+        <div class="col-5 col-sm-3 bg-danger p-3 m-4 text-center">
           <form action="<?= url . '?controller=user&action=logout' ?>" method="post">
             <button class="btn">Modificar datos</button>
           </form>
@@ -91,15 +100,6 @@
             }
             ?>
           </form>
-        </div>
-      
-        <div class="col-8">
-          <?php $currentUser = unserialize($_SESSION['user']);?>
-          <p>Nombre: <?=$currentUser->getNombre();?></p>
-          <p>Apellidos: <?=$currentUser->getApellidos();?></p>
-          <p>Correo electrónico: <?=$currentUser->getEmail();?></p>
-          <p>Dirección: <?=$currentUser->getDireccion();?></p>
-          <p>Teléfono: <?=$currentUser->getTelefono();?></p>
         </div>
       </div>
     </div>

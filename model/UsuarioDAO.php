@@ -7,7 +7,7 @@ class UsuarioDAO{
 
     public static function getUserLogin($usuario, $pass){
         $conn = database::connect();
-        $stmt = $conn->prepare("SELECT * FROM CLIENTES WHERE usuario=?");
+        $stmt = $conn->prepare("SELECT * FROM USUARIOS WHERE usuario=?");
         $stmt->bind_param("s", $usuario);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -20,7 +20,7 @@ class UsuarioDAO{
         } else {
             $clienteid = $usuarioObj->getClienteId();
             
-            $stmt = $conn->prepare("SELECT * FROM CREDENCIALES WHERE cliente_id=?");
+            $stmt = $conn->prepare("SELECT * FROM CREDENCIALES WHERE user_id=?");
             $stmt->bind_param("i", $clienteid);
             $stmt->execute();
             $resultCredenciales = $stmt->get_result();
@@ -33,7 +33,7 @@ class UsuarioDAO{
     
                 // Verificar el hash de la contraseña
                 if (password_verify($pass, $storedPasswordHash)) {
-                    $stmt = $conn->prepare("SELECT * FROM CLIENTES WHERE cliente_id=? AND permisos_admin=0");
+                    $stmt = $conn->prepare("SELECT * FROM USUARIOS WHERE user_id=? AND permisos_admin=0");
                     $stmt->bind_param("i", $clienteid);
                     $stmt->execute();
                     $result = $stmt->get_result();
@@ -49,7 +49,7 @@ class UsuarioDAO{
                     }
     
                     // Configurar el resto de las propiedades comunes
-                    $usuarioObj->setClienteId($row['cliente_id']);
+                    $usuarioObj->setClienteId($row['user_id']);
                     $usuarioObj->setUsuario($row['usuario']);
                     $usuarioObj->setEmail($row['email']);
                     $usuarioObj->setNombre($row['nombre']);
@@ -79,13 +79,13 @@ class UsuarioDAO{
 
 
 
-    // CUIDADO - Elimina una cuenta de la BBDD segun el cliente_id (excepto administradores)
+    // CUIDADO - Elimina una cuenta de la BBDD segun el user_id (excepto administradores)
     public static function eliminarCuenta($usuario_id) {
             // Obtener la conexión a la base de datos (ajusta según tu implementación)
             $conn = database::connect();
     
             // Verificar si el usuario existe antes de eliminar la cuenta
-            $query = "DELETE FROM CLIENTES WHERE cliente_id=?";
+            $query = "DELETE FROM USUARIOS WHERE user_id=?";
             $stmt = $conn->prepare($query);
             $stmt->bind_param('i', $usuario_id);
             $stmt->execute();
@@ -96,7 +96,7 @@ class UsuarioDAO{
             $conn = database::connect();
     
             // Verificar si el usuario ya existe
-            $stmt = $conn->prepare("SELECT * FROM CLIENTES WHERE usuario=?");
+            $stmt = $conn->prepare("SELECT * FROM USUARIOS WHERE usuario=?");
             $stmt->bind_param("s", $usuario);
             $stmt->execute();
             $result = $stmt->get_result();
@@ -105,21 +105,21 @@ class UsuarioDAO{
                 return 1; // Usuario ya existe
             }
     
-            // Insertar nuevo usuario en CLIENTES
-            $stmt = $conn->prepare("INSERT INTO CLIENTES (usuario, email, nombre, apellidos, direccion, telefono, permisos_admin) VALUES (?, ?, ?, ?, ?, ?, 0)");
+            // Insertar nuevo usuario en USUARIOS
+            $stmt = $conn->prepare("INSERT INTO USUARIOS (usuario, email, nombre, apellidos, direccion, telefono, permisos_admin) VALUES (?, ?, ?, ?, ?, ?, 0)");
             $stmt->bind_param("ssssss", $usuario, $email, $nombre, $apellidos, $direccion, $telefono);
             
             if (!$stmt->execute()) {
-                return 2; // Error al registrar en CLIENTES
+                return 2; // Error al registrar en USUARIOS
             }
     
             // Obtener el ID del nuevo usuario insertado
-            $cliente_id = $stmt->insert_id;
+            $user_id = $stmt->insert_id;
     
             // Insertar credenciales en CREDENCIALES
             $hashedPass = password_hash($password, PASSWORD_DEFAULT);
-            $stmt = $conn->prepare("INSERT INTO CREDENCIALES (cliente_id, password) VALUES (?, ?)");
-            $stmt->bind_param("is", $cliente_id, $hashedPass);
+            $stmt = $conn->prepare("INSERT INTO CREDENCIALES (user_id, password) VALUES (?, ?)");
+            $stmt->bind_param("is", $user_id, $hashedPass);
     
             if ($stmt->execute()) {
                 return 0; // Registro exitoso

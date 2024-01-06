@@ -1,7 +1,7 @@
 <?php
 
 class Usuario{
-    private $cliente_id;
+    private $user_id;
     private $usuario;
     private $email;
     private $nombre;
@@ -14,17 +14,17 @@ class Usuario{
 
 
     /**
-     * Get the value of cliente_id
+     * Get the value of user_id
      */
     public function getClienteId(){
-        return $this->cliente_id;
+        return $this->user_id;
     }
 
     /**
-     * Set the value of cliente_id
+     * Set the value of user_id
      */
-    public function setClienteId($cliente_id): self{
-        $this->cliente_id = $cliente_id;
+    public function setClienteId($user_id): self{
+        $this->user_id = $user_id;
         
         return $this;
     }
