@@ -13,29 +13,43 @@
   </header>
 
   <!----------------------------------------------------------------------------------------------------->
+  <div class="my-4">
+  <h2 class="p-0 my-3 fw-semibold text-center">Crear una cuenta</h2> <!-- FONT SIZE 20 -->
+  </div>
+    <div class="d-flex col-12 container-fluid justify-content-center align-items-center">
+      <form action="?controller=user&action=registrar" method="post">
+        <div>
+          <label class="label-text-login" for="email">Correo electrónico:</label><br>
+          <input class="input-text-login" type="email" name="email" required>
+        </div>
+        <div>
+          <label class="label-text-login" for="password">Contraseña:</label><br>
+          <input class="input-text-login" type="password" name="password" required>
+        </div>
+        <div>
+          <label class="label-text-login" for="nombre">Nombre:</label><br>
+          <input class="input-text-login" type="text" name="nombre" required>
+        </div>
+        <div>
+          <label class="label-text-login" for="apellidos">Apellidos:</label><br>
+          <input class="input-text-login" type="text" name="apellidos" required>
+        </div>
+        <div>
+          <label class="label-text-login" for="direccion">Dirección:</label><br>
+          <input class="input-text-login" type="text" name="direccion" required>
+        </div>
+        <div>
+          <label class="label-text-login" for="telefono">Teléfono:</label><br>
+          <input class="input-text-login" type="tel" name="telefono" required>
+        </div>
+        <div class="my-4">
+          <input class="fw-semibold btn-login" type="submit" value="CREAR UNA CUENTA">
+        </div>
+      </form>
+    </div>
 
-    <h2>Registro de Usuario</h2>
-    <form action="?controller=user&action=registrar" method="post">
-    <label for="email">Correo Electrónico:</label>
-        <input type="email" name="email" required>
-        <br>
-        <label for="password">Contraseña:</label>
-        <input type="password" name="password" required>
-        <br>
-        <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" required>
-        <br>
-        <label for="apellidos">Apellidos:</label>
-        <input type="text" name="apellidos" required>
-        <br>
-        <label for="direccion">Dirección:</label>
-        <input type="text" name="direccion" required>
-        <br>
-        <label for="telefono">Teléfono:</label>
-        <input type="tel" name="telefono" required>
-        <br>
-        <input type="submit" value="Registrar">
-    </form>
+
+
 
   <!-------------------------------------------------------------------------------->
   </body>

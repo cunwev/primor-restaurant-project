@@ -1,5 +1,6 @@
 <?php
-class Pedido{
+class Pedido
+{
     protected $producto;
     protected $cantidad = 1;
     public $categoria;
@@ -7,51 +8,59 @@ class Pedido{
     // public function __construct($producto){
     //     $this->producto = $producto;
     // }
-    public function __construct($producto) {
+    public function __construct($producto)
+    {
         $this->producto = $producto;
         $this->categoria = $producto->getNombreCategoria();
     }
-    
+
     /*Get the value of producto*/
-    public function getProducto(){
+    public function getProducto()
+    {
         return $this->producto;
     }
 
 
     /*Set the value of producto*/
-    public function setProducto($producto): self{
+    public function setProducto($producto): self
+    {
         $this->producto = $producto;
-        
+
         return $this;
     }
 
 
     /*Get the value of cantidad*/
-    public function getCantidad(){
+    public function getCantidad()
+    {
         return $this->cantidad;
     }
 
 
     /*Set the value of cantidad*/
-    public function setCantidad($cantidad): self{
+    public function setCantidad($cantidad): self
+    {
         $this->cantidad = $cantidad;
-        
+
         return $this;
     }
 
 
-    public function aumentarCantidad(){
+    public function aumentarCantidad()
+    {
         $this->cantidad++;
     }
 
-    
-        // Método para establecer la categoría
-        public function setCategoria($categoria) {
-            $this->categoria = $categoria;
-        }
 
-        public function getCategoria() {
-            return $this->categoria;
-        }
+    // Método para establecer la categoría
+    public function setCategoria($categoria)
+    {
+        $this->categoria = $categoria;
+    }
+
+    public function getCategoria()
+    {
+        return $this->categoria;
+    }
 }
 ?>

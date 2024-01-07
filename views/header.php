@@ -14,7 +14,7 @@ ob_start(); // Place ob_start() at the very beginning of the script to avoid hea
 
           <div class="collapse navbar-collapse align-items-center" id="navbarSupportedContent">
             <form class="d-flex mx-auto" role="search">
-              <input class="form-control me-2 text-black-50 searchbar" type="search" placeholder="Que te apetece para comer?" aria-label="Search">
+              <input class="form-control me-2 text-black-50 searchbar" type="search" placeholder="¿Qué te apetece para comer?" aria-label="Search">
             </form>
           </div>
 
@@ -22,16 +22,16 @@ ob_start(); // Place ob_start() at the very beginning of the script to avoid hea
         </div>
         <ul class=" d-flex flex-row justify-content-center navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost/PRIMOR/index.php?controller=producto"><img src="assets/images/home.png" width="30" height="30" /></a>
+            <a class="nav-link" href="http://localhost/PRIMOR/index.php?controller=producto"><img src="assets/icons/home.svg" width="30" height="30" /></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost/PRIMOR/index.php?controller=producto&action=carta"><img src="assets/images/carta.png" width="30" height="30" /></a>
+            <a class="nav-link" href="http://localhost/PRIMOR/index.php?controller=producto&action=carta"><img src="assets/icons/carta.svg" width="30" height="30" /></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost/PRIMOR/index.php?controller=user&action=login"><img src="assets/images/login.png" width="30" height="30" /></a>
+            <a class="nav-link" href="http://localhost/PRIMOR/index.php?controller=user&action=login"><img src="assets/icons/login.svg" width="30" height="30" /></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost/PRIMOR/index.php?controller=cesta&action=cesta"><img src="assets/images/cesta.png" width="30" height="30" />
+            <a class="nav-link" href="http://localhost/PRIMOR/index.php?controller=cesta&action=cesta"><img src="assets/icons/cesta.svg" width="30" height="30" />
             <?php
               if (isset($_SESSION['addproducto'])) {
                 // Imprime el conteo de elementos en 'addproducto', es decir, en cesta.

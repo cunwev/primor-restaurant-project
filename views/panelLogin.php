@@ -15,20 +15,22 @@
   <!----------------------------------------------------------------------------------------------------->
   <?php
   if (!isset($_SESSION['user'])) { ?>
-    <h2 class="p-0 my-3 fw-semibold text-center">ENTRAR</h2> <!-- FONT SIZE 20 -->
-    <p class="p-0 my-4 text-center">Si ya tienes una cuenta, inicia sesión con tu dirección de email</p>
-    <div class="d-flex col-12 container-fluid justify-content-center align-items-center">
+    <div class="my-4">
+      <h2 class="p-0 my-3 fw-semibold text-center">Entrar</h2> <!-- FONT SIZE 20 -->
+      <p class="p-0  text-center">Si ya tienes una cuenta, inicia sesión con tu dirección de email</p>
+    </div>
+    <div class="d-flex flex-column align-items-center justify-content-center">
 
-      
+
       <form action="?controller=user&action=loginProcess" method="post">
         <div>
-          <label class="label-text-login">Email *</label><br>
-          <input class="input-text-login" type="email" name="user" id="user" placeholder=""/>
+          <label class="label-text-login w-100">Email *</label>
+          <input class="input-text-login w-100 form-control" type="email" name="user" id="user" placeholder="" />
         </div>
         <div>
-          <label class="label-text-login">Contraseña *</label><br>
-          <div class="container-login-password">
-            <input class="input-text-login" type="password" name="pass" id="pass" placeholder=""/>
+          <label class="label-text-login w-100">Contraseña *</label>
+          <div class="container-login-password w-100">
+            <input class="input-text-login w-100 form-control" type="password" name="pass" id="pass" placeholder="" />
             <button class="btn-login-password" name="pass" type="button" onclick="togglePasswordVisibility()" id="passwordToggle">Mostrar</button>
           </div>
         </div>
@@ -46,59 +48,36 @@
     </div>
   <?php
   } else {
-    // Verificar si 'iduser' está definido en $_SESSION
-    if (isset($_COOKIE[$_SESSION['iduser']])) {
-      require_once 'controller/UserController.php';
-      // Llama a la función mostrarUltimoPedido
-      UserController::mostrarUltimoPedido();
-    }
   ?>
-
-
     <!--Usuario-->
-    <div class="container-xl" style="height: 50%">
+    <div class="container-fluid my-4 h-50">
       <div class="row">
-        <h2 class="p-0 mx-0 mt-5 mb-4 simple-title">Bienvenido/a <?=unserialize($_SESSION['user'])->getNombre()?></h2>
-        <div class="col-7 col-sm-4 p-3 m-4 bg-secondary">
-          <?php $currentUser = unserialize($_SESSION['user']);?>
-          <p>Nombre: <?=$currentUser->getNombre();?></p>
-          <p>Apellidos: <?=$currentUser->getApellidos();?></p>
-          <p>Correo electrónico: <?=$currentUser->getEmail();?></p>
-          <p>Dirección: <?=$currentUser->getDireccion();?></p>
-          <p>Teléfono: <?=$currentUser->getTelefono();?></p>
-        </div>
-        <div class="col-5 col-sm-3 bg-danger p-3 m-4 text-center">
+        <h2 class="p-0 m-0 simple-title">Bienvenido/a <?= unserialize($_SESSION['user'])->getNombre() ?></h2>
+        <?php // Verificar si 'iduser' está definido en $_SESSION
+        if (isset($_COOKIE[$_SESSION['iduser']])) {
+          require_once 'controller/UserController.php';
+          // Llama a la función mostrarUltimoPedido
+          UserController::mostrarUltimoPedido();
+        }
+        // Llamada al método mostrarDatosUsuario()
+        UserController::mostrarDatosUsuario();
+        ?>
+        <div class="col-4 col-sm-3 p-3 w-auto">
+          <?php 
+          require_once 'controller/AdminController.php';
+          // Crear una instancia de AdminController
+          $adminController = new AdminController();
+          // Llamada al método showAdminOptions()
+          $adminController->showAdminOptions();
+          ?>
           <form action="<?= url . '?controller=user&action=logout' ?>" method="post">
-            <button class="btn">Modificar datos</button>
+            <button class="btn-a w-100 px-2 py-1">Modificar datos</button>
           </form>
-          <form  action="<?= url . '?controller=user&action=eliminarCuenta' ?>" method="post">
-            <button class="btn" onclick="return confirm('¿Estás seguro de que quieres eliminar tu cuenta?');">Eliminar cuenta</button>
+          <form action="<?= url . '?controller=user&action=eliminarCuenta' ?>" method="post">
+            <button class="btn-a w-100 px-2 py-1" onclick="return confirm('¿Estás seguro de que quieres eliminar tu cuenta?');">Eliminar cuenta</button>
           </form>
           <form action="<?= url . '?controller=user&action=logoutProcess' ?>" method="post">
-            <button class="btn">Cerrar sesión</button>
-          </form>
-          <!--UsuarioAdmin-->
-          <form action="<?= url . '?controller=user&action=goAdmin' ?>" method="post">
-            <?php
-            // Obtener el usuario de la sesión
-            $currentUser = unserialize($_SESSION['user']);
-            // Verificar si el usuario es administrador
-            if ($currentUser instanceof UsuarioAdmin) {
-              // Se imprime por pantalla el botón de acceso a Administrar productos
-              echo '<button class="btn">Administrar productos</button>';
-            }
-            ?>
-          </form>
-          <form action="" method="post">
-            <?php
-            // Obtener el usuario de la sesión
-            $currentUser = unserialize($_SESSION['user']);
-            // Verificar si el usuario es administrador
-            if ($currentUser instanceof UsuarioAdmin) {
-              // Se imprime por pantalla el botón de acceso a Administrar productos
-              echo '<button class="btn">Administrar usuarios</button>';
-            }
-            ?>
+            <button class="btn-a w-100 px-2 py-1">Cerrar sesión</button>
           </form>
         </div>
       </div>

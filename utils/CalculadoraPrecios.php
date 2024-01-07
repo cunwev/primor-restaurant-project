@@ -11,3 +11,4 @@ Class CalculadoraPrecios{
         return number_format($precioTotal, 2);
     }
 }
+?>

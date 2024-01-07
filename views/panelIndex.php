@@ -109,19 +109,19 @@
 
   <!---------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="bg-black my-5 ">
-    <div class="container-xl mx-52 py-40 bg-black" style="padding: 40px 0px 40px 0px">
-      <div class="row p-0 reverse" style="margin: 0px 0px 40px 0px; display: flex; justify-content: space-between">
+  <div class="bg-black my-5">
+    <div class="container-xl mx-52 bg-black" style="padding: 40px 0px 40px 0px">
+      <div class="row p-0 reverse d-flex justify-content-between " style="margin: 0px 0px 40px 0px;">
 
         <div class="main-banner-b bg-image col-12 col-md-8 m-0 p-0 mgtopbottom" style="background-image: url('assets/images/banner2.PNG')">
         </div>
 
         <div class="col-12 col-md-4 m-0 p-0 text-center d-flex">
-          <div class="d-flex flex-column align-items-center justify-content-center mgreset p-4">
+          <div class="d-flex flex-column align-items-center justify-content-center mgreset p-5">
             <h3 class="p-0 m-0 mb-5 text-white">MER À VERSAILLES</h3>
             <p class="text-white text-center">"Desde el mar hasta Versalles, una brisa refrescante y con sabor floral en cada bocado"</p>
             <p class="text-white text-center">Descubre una combinación de platos inspirados más allá de las olas; desde Mousse demarisco con mayonesa derosa hasta reducción de Bouillabaisse con algas nori.</p>
-            <div class="descubrir d-inline-block d-flex align-items-end display-mode-off">
+            <div class="descubrir d-inline-block d-flex align-items-end">
               <p class="p-0 m-0 fw-semibold align-self-end text-white">Descubrir</p>
             </div>
           </div>
@@ -158,7 +158,7 @@
                 <input type="hidden" name="id" value="<?= $product->getproducto_id() ?>">
                 <input type="hidden" name="categoria" value="<?= $product->getNombreCategoria() ?>">
                 <img src="assets/images/productos/<?= $product->getimagen() ?>" alt="imagen de <?= $product->getnombre() ?>" width="200px" height="200px">
-                <button type="submit" class="fw-semibold btn-add-producto">AÑADIR AL CARRITO</button>
+                <button type="submit" class="fw-semibold btn-add-producto">AÑADIR A LA CESTA</button>
               </form>
             </div>
             <div class="sub-container-product">

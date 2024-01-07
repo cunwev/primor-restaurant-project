@@ -12,13 +12,13 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('../../assets/images/icon_favorito.png') !important;
+    background-image: url('../../assets/icons/icon_favorito.svg') !important;
     transition: background-image 0.5s ease-in-out;
     width: 30px;
     height: 30px;
 }
     .btn-fav:hover {
-        background-image: url('../../assets/images/icon_favorito_hover.png') !important;
+        background-image: url('../../assets/icons/icon_favorito_hover.svg') !important;
     }
 
 .btn-add-producto {

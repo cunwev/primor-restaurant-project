@@ -1,5 +1,6 @@
 <?php
-class Database{
+class Database
+{
 
     public static function connect($database = 'primor_bbdd', $username = 'root', $password = '', $hostname = 'localhost')
     {

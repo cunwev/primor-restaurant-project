@@ -32,7 +32,7 @@
                                 <input type="hidden" name="id" value="<?= $product->getproducto_id() ?>">
                                 <input type="hidden" name="categoria" value="<?= $product->getNombreCategoria() ?>">
                                 <img src="assets/images/productos/<?= $product->getimagen() ?>" alt="imagen de <?= $product->getnombre() ?>" width="200px" height="200px">
-                                <button type="submit" class="fw-semibold btn-add-producto">AÑADIR AL CARRITO</button>
+                                <button type="submit" class="fw-semibold btn-add-producto">AÑADIR A LA CESTA</button>
                             </form>
                         </div>
                         <div class="sub-container-product">
@@ -76,7 +76,7 @@
                                 <input type="hidden" name="id" value="<?= $product->getproducto_id() ?>">
                                 <input type="hidden" name="categoria" value="<?= $product->getNombreCategoria() ?>">
                                 <img src="assets/images/productos/<?= $product->getimagen() ?>" alt="imagen de <?= $product->getnombre() ?>" width="200px" height="200px">
-                                <button type="submit" class="fw-semibold btn-add-producto">AÑADIR AL CARRITO</button>
+                                <button type="submit" class="fw-semibold btn-add-producto">AÑADIR A LA CESTA</button>
                             </form>
                         </div>
                         <div class="sub-container-product">
@@ -120,7 +120,7 @@
                                 <input type="hidden" name="id" value="<?= $product->getproducto_id() ?>">
                                 <input type="hidden" name="categoria" value="<?= $product->getNombreCategoria() ?>">
                                 <img src="assets/images/productos/<?= $product->getimagen() ?>" alt="imagen de <?= $product->getnombre() ?>" width="200px" height="200px">
-                                <button type="submit" class="fw-semibold btn-add-producto">AÑADIR AL CARRITO</button>
+                                <button type="submit" class="fw-semibold btn-add-producto">AÑADIR A LA CESTA</button>
                             </form>
                         </div>
                         <div class="sub-container-product">

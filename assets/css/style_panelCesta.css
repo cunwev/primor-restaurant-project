@@ -1,0 +1,92 @@
+/* CESTA - panelCesta.php */
+
+/* --- BOTONES -------------------------------------------------- */
+
+.btn-cart-item {
+    font-size: 14px;
+    line-height: 22px;
+    background: none;
+    border: none;
+    color: #ff2121;
+    cursor: pointer;
+}
+
+.btn-cart-tramitar {
+    width: 368px;
+    height: 40px;
+    margin-top: 16px;
+}
+
+.btn-cart-aplicar {
+    width: 128px;
+    height: 40px;
+}
+
+.btn-cart-regalo {
+    width: 209px;
+    margin-top: 16px;
+}
+
+
+
+/* --- BANNERS -------------------------------------------------- */
+
+.banner-cart-empty {
+    width:275px; height: 417px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../../assets/images/cesta_vacio.PNG') !important;
+}
+
+.banner-cart-a {
+    margin-top: 40px;
+    padding: 16px
+}
+
+    .banner-cart-b {
+        height: 155px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: #F4F4F4; /*opcional*/
+    }
+
+        .banner-cart-c {
+            height: 96px; 
+            background-color: #F4F4F4; 
+            padding: 16px
+        }
+
+
+
+/* --- CONTENEDORES -------------------------------------------------- */
+
+.cart-summary-container { /*container-cart-summary*/
+    background-color:#F4F4F4;
+    padding: 16px
+}
+
+.cart-item-container { /*container-cart-item*/
+    padding-top: 10px; 
+    padding-bottom: 10px; 
+    border-bottom: 1px solid #F4F4F4;
+}
+
+.cart-item-cantidad { /*container-cart-cantidad*/
+    border: 2px solid #F4F4F4;
+    width: 70px; 
+}
+
+
+
+/* --- OTROS -------------------------------------------------- */
+
+.input-text-descuento {
+    width: 231px;
+    height: 40px;
+}
+    .input-text-descuento::placeholder {
+        font-size: 14px; /* Puedes ajustar el tamaño según tus necesidades */
+        text-align:center;
+    }

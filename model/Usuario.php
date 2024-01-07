@@ -1,6 +1,7 @@
 <?php
 
-class Usuario{
+class Usuario
+{
     private $user_id;
     private $usuario;
     private $email;
@@ -9,23 +10,26 @@ class Usuario{
     private $direccion;
     private $telefono;
 
-    public function __construct(){
+    public function __construct()
+    {
     }
 
 
     /**
      * Get the value of user_id
      */
-    public function getClienteId(){
+    public function getClienteId()
+    {
         return $this->user_id;
     }
 
     /**
      * Set the value of user_id
      */
-    public function setClienteId($user_id): self{
+    public function setClienteId($user_id): self
+    {
         $this->user_id = $user_id;
-        
+
         return $this;
     }
 
@@ -33,7 +37,8 @@ class Usuario{
     /**
      * Get the value of usuario
      */
-    public function getUsuario(){
+    public function getUsuario()
+    {
         return $this->usuario;
     }
 
@@ -41,9 +46,10 @@ class Usuario{
     /**
      * Set the value of usuario
      */
-    public function setUsuario($usuario): self{
+    public function setUsuario($usuario): self
+    {
         $this->usuario = $usuario;
-        
+
         return $this;
     }
 
@@ -51,7 +57,8 @@ class Usuario{
     /**
      * Get the value of email
      */
-    public function getEmail(){
+    public function getEmail()
+    {
         return $this->email;
     }
 
@@ -59,9 +66,10 @@ class Usuario{
     /**
      * Set the value of email
      */
-    public function setEmail($email): self{
+    public function setEmail($email): self
+    {
         $this->email = $email;
-        
+
         return $this;
     }
 
@@ -69,7 +77,8 @@ class Usuario{
     /**
      * Get the value of nombre
      */
-    public function getNombre(){
+    public function getNombre()
+    {
         return $this->nombre;
     }
 
@@ -77,9 +86,10 @@ class Usuario{
     /**
      * Set the value of nombre
      */
-    public function setNombre($nombre): self{
+    public function setNombre($nombre): self
+    {
         $this->nombre = $nombre;
-        
+
         return $this;
     }
 
@@ -87,7 +97,8 @@ class Usuario{
     /**
      * Get the value of apellidos
      */
-    public function getApellidos(){
+    public function getApellidos()
+    {
         return $this->apellidos;
     }
 
@@ -95,9 +106,10 @@ class Usuario{
     /**
      * Set the value of apellidos
      */
-    public function setApellidos($apellidos): self{
+    public function setApellidos($apellidos): self
+    {
         $this->apellidos = $apellidos;
-        
+
         return $this;
     }
 
@@ -105,7 +117,8 @@ class Usuario{
     /**
      * Get the value of direccion
      */
-    public function getDireccion(){
+    public function getDireccion()
+    {
         return $this->direccion;
     }
 
@@ -113,9 +126,10 @@ class Usuario{
     /**
      * Set the value of direccion
      */
-    public function setDireccion($direccion): self{
+    public function setDireccion($direccion): self
+    {
         $this->direccion = $direccion;
-        
+
         return $this;
     }
 
@@ -123,7 +137,8 @@ class Usuario{
     /**
      * Get the value of telefono
      */
-    public function getTelefono(){
+    public function getTelefono()
+    {
         return $this->telefono;
     }
 
@@ -131,18 +146,21 @@ class Usuario{
     /**
      * Set the value of telefono
      */
-    public function setTelefono($telefono): self{
+    public function setTelefono($telefono): self
+    {
         $this->telefono = $telefono;
-        
+
         return $this;
     }
 }
 
 
-class UsuarioAdmin extends Usuario{
+class UsuarioAdmin extends Usuario
+{
     private $permisos_admin;
 
-    public function __construct(){
+    public function __construct()
+    {
         parent::__construct(); // Llama al constructor de la clase padre
     }
 
@@ -150,7 +168,8 @@ class UsuarioAdmin extends Usuario{
     /**
      * Get the value of admin
      */
-    public function getPermisos_admin(){
+    public function getPermisos_admin()
+    {
         return $this->permisos_admin;
     }
 
@@ -158,9 +177,11 @@ class UsuarioAdmin extends Usuario{
     /**
      * Set the value of admin
      */
-    public function setPermisos_admin($permisos_admin): self{
+    public function setPermisos_admin($permisos_admin): self
+    {
         $this->permisos_admin = $permisos_admin;
-        
+
         return $this;
     }
 }
+?>
