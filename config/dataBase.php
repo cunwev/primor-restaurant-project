@@ -2,6 +2,7 @@
 class Database
 {
 
+    // Crea una conexión a la base de datos.
     public static function connect($database = 'primor_bbdd', $username = 'root', $password = '', $hostname = 'localhost')
     {
         // Create a database connection
@@ -15,6 +16,7 @@ class Database
         }
     }
 
+    // Cierra la conexión a la base de datos.
     public static function close($conn)
     {
         $conn->close();

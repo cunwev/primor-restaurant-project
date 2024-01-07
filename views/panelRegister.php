@@ -47,12 +47,12 @@
         </div>
       </form>
     </div>
-
+    </body>
 
 
 
   <!-------------------------------------------------------------------------------->
-  </body>
+
   <?php include_once "views/footer.php" ?>
   <script src="assets/js/script.js"></script> <!-- Script para ver la contraseña -->
 

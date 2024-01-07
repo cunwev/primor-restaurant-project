@@ -7,13 +7,9 @@ ob_start(); // Place ob_start() at the very beginning of the script to avoid hea
         <a class="nav-link text-white" href="http://localhost/PRIMOR/index.php?controller=producto">
           <div class="logo" style="background-image: url('assets/images/logo_primor.svg'); background-size:cover; background-position:center; background-repeat:no-repeat;"></div>
         </a>
-          <a class="navbar-brand" href="#"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-          </button>
 
           <div class="collapse navbar-collapse align-items-center" id="navbarSupportedContent">
-            <form class="d-flex mx-auto" role="search">
+            <form class="d-flex m-auto" role="search">
               <input class="form-control me-2 text-black-50 searchbar" type="search" placeholder="¿Qué te apetece para comer?" aria-label="Search">
             </form>
           </div>
@@ -22,16 +18,16 @@ ob_start(); // Place ob_start() at the very beginning of the script to avoid hea
         </div>
         <ul class=" d-flex flex-row justify-content-center navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost/PRIMOR/index.php?controller=producto"><img src="assets/icons/home.svg" width="30" height="30" /></a>
+            <a class="nav-link" href="http://localhost/PRIMOR/index.php?controller=producto"><img src="assets/icons/home.svg" width="30" height="30" alt="Icono de inicio."></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost/PRIMOR/index.php?controller=producto&action=carta"><img src="assets/icons/carta.svg" width="30" height="30" /></a>
+            <a class="nav-link" href="http://localhost/PRIMOR/index.php?controller=producto&action=carta"><img src="assets/icons/carta.svg" width="30" height="30" alt="Icono de carta."></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost/PRIMOR/index.php?controller=user&action=login"><img src="assets/icons/login.svg" width="30" height="30" /></a>
+            <a class="nav-link" href="http://localhost/PRIMOR/index.php?controller=user&action=login"><img src="assets/icons/login.svg" width="30" height="30" alt="Icono de panel de usuario."></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost/PRIMOR/index.php?controller=cesta&action=cesta"><img src="assets/icons/cesta.svg" width="30" height="30" />
+            <a class="nav-link" href="http://localhost/PRIMOR/index.php?controller=cesta&action=cesta"><img src="assets/icons/cesta.svg" width="30" height="30" alt="Icono de cesta.">
             <?php
               if (isset($_SESSION['addproducto'])) {
                 // Imprime el conteo de elementos en 'addproducto', es decir, en cesta.
@@ -44,15 +40,10 @@ ob_start(); // Place ob_start() at the very beginning of the script to avoid hea
       </nav>
     </div>
 
-    <nav class="navbar navbar-expand-lg bg-black ">
-      <div class="container-xl">
-        <a class="navbar-brand" href="#"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <nav class="navbar navbar-expand-lg bg-black  display-mode-off">
+      <div class="container-xl  display-mode-off">
 
-        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link active text-white" aria-current="page" href="http://localhost/PRIMOR/index.php?controller=producto"><button class="btn text-white header-menu-link" type="submit">INICIO</button></a>

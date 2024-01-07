@@ -16,13 +16,30 @@
         color: black;
     }
 
-/* --- BANNERS -------------------------------------------------- */
-
+    .btn-login-password {
+        font-size: 14px;
+        position: absolute;
+        top: 33%; /* Centra verticalmente */
+        right: 5px; /* Alinea a la derecha con un pequeño margen */
+        transform: translateY(-50%); /* Ajusta para centrar verticalmente */
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: color 0.5s ease; /* Agregamos una transición para suavizar el cambio de color */
+        }
+        
+        .btn-login-password:hover, .btn-login-password:active {
+          color: #f7f7f7; /* Cambia el color cuando está activo (haciendo clic) */
+        }
 
 
 
 /* --- CONTENEDORES -------------------------------------------------- */
 
+.container-login-password {
+    position: relative;
+    display: inline-block; /* Para que el contenedor solo tenga el ancho de su contenido */
+    }
 
 
 /* --- OTROS -------------------------------------------------- */
@@ -40,29 +57,4 @@
     padding-left: 16px; 
     padding-right: 16px; 
     margin-bottom: 16px;
-}
-
-
-
-/* --- VINCULADO A SCRIPT -------------------------------------------------- */
-
-.container-login-password {
-position: relative;
-display: inline-block; /* Para que el contenedor solo tenga el ancho de su contenido */
-}
-
-.btn-login-password {
-font-size: 14px;
-position: absolute;
-top: 33%; /* Centra verticalmente */
-right: 5px; /* Alinea a la derecha con un pequeño margen */
-transform: translateY(-50%); /* Ajusta para centrar verticalmente */
-background: none;
-border: none;
-cursor: pointer;
-transition: color 0.5s ease; /* Agregamos una transición para suavizar el cambio de color */
-}
-
-.btn-login-password:hover, .btn-login-password:active {
-  color: #f7f7f7; /* Cambia el color cuando está activo (haciendo clic) */
 }

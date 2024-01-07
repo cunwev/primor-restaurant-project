@@ -5,13 +5,13 @@ include_once 'model/UsuarioDAO.php';
 
 class UserController
 {
-
+    // Función para el panel de login
     public function login()
     {
         include_once 'views/panelLogin.php';
     }
 
-
+    // Función para pasar las variables necesarias a la hora de realizar el login
     public function loginProcess()
     {
         $usuario = $_POST['user'];
@@ -19,7 +19,7 @@ class UserController
         UsuarioDAO::getUserLogin($usuario, $pass);
     }
 
-
+    // Función para el proceso de logout, destruye la sesion y te manda de vuelta a la main page
     public function logoutProcess()
     {
         session_start();
@@ -27,6 +27,7 @@ class UserController
         header("Location:" . url);
     }
 
+    // Función para mostrar los datos de usuario (no debe funcionar si es admin)
     public function mostrarDatosUsuario()
     {
         $currentUser = unserialize($_SESSION['user']);
@@ -42,7 +43,7 @@ class UserController
     }
 
 
-
+    // Función para mostrar el ultimo pedido en forma de cookie, una vez mostrado esta se destruye.
     public function mostrarUltimoPedido()
     {
         // Obtén el valor de la cookie antes de eliminarla
@@ -56,6 +57,7 @@ class UserController
         echo '<p class="fw-semibold m-0 p-0">Tu último pedido fue de ' . $ultimoPedido . ' € <p>';
     }
 
+    // Función para eliminar la cuenta
     public function eliminarCuenta()
     {
         // Obtener el usuario de la sesión
@@ -77,11 +79,13 @@ class UserController
         header("Location:" . url); // Puedes redirigir a donde quieras después de eliminar la cuenta
     }
 
+    // Función para acceder al panel de registro
     public function register()
     {
         include 'views/panelRegister.php';
     }
 
+    // Función para registrar un usuario, es decir, crear una cuenta
     public function registrar()
     {
         // Recibir los datos del formulario
@@ -99,7 +103,7 @@ class UserController
         // Verificar el resultado y tomar acciones
         switch ($resultado) {
             case 0:
-                echo "Registro exitoso. Puedes iniciar sesión ahora.";
+                header("Location:".url.'?controller=user&action=login');
                 break;
             case 1:
                 echo "El usuario ya existe. Por favor, elige otro nombre de usuario.";

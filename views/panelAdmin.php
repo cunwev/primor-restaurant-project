@@ -15,7 +15,7 @@
   <!----------------------------------------------------------------------------------------------------->
 
 
-  <div class="container-xl m-4">
+  <div class="container-xl m-4 d-flex flex-column align-items-center justify-content-center">
 
     <!-- Tu formulario para agregar productos -->
     <form action="<?= url . '?controller=admin&action=insertProducto' ?>" method="post">
@@ -39,7 +39,7 @@
       <button type="submit" name="btn_insert">Agregar Producto</button>
     </form>
 
-    <table>
+    <table class="table-bordered">
       <thead>
         <tr>
           <th>ID</th>
@@ -51,7 +51,7 @@
         </tr>
       </thead>
       <?php foreach ($allProducts as $product) { ?>
-        <tr class="border">
+        <tr>
           <td><?= $product->getproducto_id() ?></td>
           <td><img src="assets/images/productos/<?= $product->getimagen() ?>" alt="imagen de <?= $product->getnombre() ?>" width="50px" height="50px"></td>
           <td><?= $product->getnombre() ?></td>

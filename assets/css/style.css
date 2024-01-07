@@ -1,13 +1,13 @@
 @charset "utf-8";
 
-/* FONTS */
+/* ----- TIPOGRAFIAS ----- */
+
 @import url('https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap');
 
 @font-face {
     font-family: 'Muli';
     src: url('https://fonts.googleapis.com/css2?family=Muli:wght@300;400;700&display=swap') format('woff2');
 }
-
 * {
     font-family: 'Muli', sans-serif;
 }
@@ -67,8 +67,6 @@
     font-weight: 600;
 }
 
-
-
 .cart-button-cantidad {
     background: none;
     border: none;
@@ -115,23 +113,13 @@
 
 
 
-
 /* ----- HEADER ----- */
 
 @media only screen and (max-width: 900px) {
-    .peq-header-iconos {
-        visibility: hidden !important
-    }
 
     .display-mode-off {
         visibility: hidden !important
     }
-}
-
-.btn:hover {
-    border-radius: 0;
-    border-bottom: 2px solid #FF2121;
-    padding-bottom: 3px;
 }
 
 .searchbar {
@@ -194,63 +182,17 @@
     background-repeat: no-repeat;
 }
 
-/* .banner-a:nth-child(1) {
-    background-image: url('../../assets/icons/banner1_1.svg');
-}
-
-.banner-a:nth-child(2) {
-    background-image: url('../../assets/icons/banner1_2.svg');
-} */
-
-
-
-/* ----- MENU HOME ----- */
-
-
-
-/* ----- BANNER SEGUNDO ----- */
-
-@media only screen and (max-width: 600px) {
-    .grandote {
-        width: 85% !important;
-        margin-top: 20px !important;
-    }
-
-    .reverse {
-        display: flex;
-        flex-direction: column-reverse;
-    }
-
-    .centrar-mini {
-        justify-content: center !important;
-    }
-
-    .mgtopbottom {
-        margin-top: -25px !important;
-        margin-bottom: -250px !important;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* ----- GENERAL ----- */
+
+/* Solo tiene formato en hover */
+.btn:hover {
+    border-radius: 0;
+    border-bottom: 2px solid #FF2121;
+    padding-bottom: 3px;
+}
+
 .btn-a {
     padding: 4px 32px 4px 32px;
     background-color: white;
@@ -287,6 +229,9 @@
         background-color: white;
         color: #FF2121;
     }
+
+
+/* ----- SCROLLBAR ----- */
 
 ::-webkit-scrollbar {
     width: 8px;

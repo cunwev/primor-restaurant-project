@@ -15,9 +15,9 @@
   <!----------------------------------------------------------------------------------------------------->
   <?php
   if (!isset($_SESSION['user'])) { ?>
-    <div class="my-4">
-      <h2 class="p-0 my-3 fw-semibold text-center">Entrar</h2> <!-- FONT SIZE 20 -->
-      <p class="p-0  text-center">Si ya tienes una cuenta, inicia sesión con tu dirección de email</p>
+    <div class="my-4 p-1">
+      <h2 class="p-0 fw-semibold text-center">Entrar</h2> <!-- FONT SIZE 20 -->
+      <p class="p-0 text-center">Si ya tienes una cuenta, inicia sesión con tu dirección de email</p>
     </div>
     <div class="d-flex flex-column align-items-center justify-content-center">
 
@@ -50,7 +50,7 @@
   } else {
   ?>
     <!--Usuario-->
-    <div class="container-fluid my-4 h-50">
+    <div class="container-fluid my-5 h-50 d-flex flex-column align-items-center justify-content-center">
       <div class="row">
         <h2 class="p-0 m-0 simple-title">Bienvenido/a <?= unserialize($_SESSION['user'])->getNombre() ?></h2>
         <?php // Verificar si 'iduser' está definido en $_SESSION
@@ -82,6 +82,7 @@
         </div>
       </div>
     </div>
+    </body>
   <?php } ?>
   <!-------------------------------------------------------------------------------->
 

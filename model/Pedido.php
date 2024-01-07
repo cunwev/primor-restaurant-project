@@ -45,7 +45,7 @@ class Pedido
         return $this;
     }
 
-
+    // Método para aumentar la cantidad
     public function aumentarCantidad()
     {
         $this->cantidad++;
@@ -58,6 +58,7 @@ class Pedido
         $this->categoria = $categoria;
     }
 
+    // Método para obtener la categoria
     public function getCategoria()
     {
         return $this->categoria;

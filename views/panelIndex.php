@@ -38,7 +38,7 @@
       <div class="col-6 col-lg-3 d-flex flex-column align-items-center justify-content-center">
         <div class="container-menu-home" style="background-image: url('assets/images/menu_imagen1.png')">
         </div>
-        <div class="text-menu-home pequeñajo d-inline-block text-center mt-3 justify-content-center align-items-end">
+        <div class="text-menu-home little-format d-inline-block text-center mt-3 justify-content-center align-items-end">
           <p class="p-0 m-0 fw-semibold align-self-end">Delicias del mar</p>
         </div>
       </div>
@@ -46,7 +46,7 @@
       <div class="col-6 col-lg-3 d-flex flex-column align-items-center justify-content-center">
         <div class="container-menu-home" style="background-image: url('assets/images/menu_imagen2.png')">
         </div>
-        <div class="text-menu-home pequeñajo d-inline-block text-center mt-3 justify-content-center align-items-end">
+        <div class="text-menu-home little-format d-inline-block text-center mt-3 justify-content-center align-items-end">
           <p class="p-0 m-0 fw-semibold align-self-end">Sabores de la tierra</p>
         </div>
       </div>
@@ -54,7 +54,7 @@
       <div class="col-6 col-lg-3 d-flex flex-column align-items-center justify-content-center">
         <div class="container-menu-home" style="background-image: url('assets/images/menu_imagen3.png')">
         </div>
-        <div class="text-menu-home pequeñajo d-inline-block text-center mt-3 justify-content-center align-items-end">
+        <div class="text-menu-home little-format d-inline-block text-center mt-3 justify-content-center align-items-end">
           <p class="p-0 m-0 fw-semibold align-self-end">Con un toque floral</p>
         </div>
       </div>
@@ -62,7 +62,7 @@
       <div class="col-6 col-lg-3 d-flex flex-column align-items-center justify-content-center">
         <div class="container-menu-home" style="background-image: url('assets/images/menu_imagen4.png')">
         </div>
-        <div class="text-menu-home pequeñajo d-inline-block text-center mt-3 justify-content-center align-items-end">
+        <div class="text-menu-home little-format d-inline-block text-center mt-3 justify-content-center align-items-end">
           <p class="p-0 m-0 fw-semibold align-self-end">Sorpresas al paladar</p>
         </div>
       </div>
@@ -73,7 +73,7 @@
       <div class="col-6 col-lg-3 d-flex flex-column align-items-center justify-content-center">
         <div class="container-menu-home" style="background-image: url('assets/images/menu_imagen5.png')">
         </div>
-        <div class="text-menu-home pequeñajo d-inline-block text-center mt-3 justify-content-center align-items-end">
+        <div class="text-menu-home little-format d-inline-block text-center mt-3 justify-content-center align-items-end">
           <p class="p-0 m-0 fw-semibold align-self-end">Dulces secretos</p>
         </div>
       </div>
@@ -81,7 +81,7 @@
       <div class="col-6 col-lg-3 d-flex flex-column align-items-center justify-content-center">
         <div class="container-menu-home" style="background-image: url('assets/images/menu_imagen6.png')">
         </div>
-        <div class="text-menu-home pequeñajo d-inline-block text-center mt-3 justify-content-center align-items-end">
+        <div class="text-menu-home little-format d-inline-block text-center mt-3 justify-content-center align-items-end">
           <p class="p-0 m-0 fw-semibold align-self-end">Placeres veganos</p>
         </div>
       </div>
@@ -89,7 +89,7 @@
       <div class="col-6 col-lg-3 d-flex flex-column align-items-center justify-content-center">
         <div class="container-menu-home" style="background-image: url('assets/images/menu_imagen7.png')">
         </div>
-        <div class="text-menu-home pequeñajo d-inline-block text-center mt-3 justify-content-center align-items-end">
+        <div class="text-menu-home little-format d-inline-block text-center mt-3 justify-content-center align-items-end">
           <p class="p-0 m-0 fw-semibold align-self-end">Clásicos infalibles</p>
         </div>
       </div>
@@ -97,7 +97,7 @@
       <div class="col-6 col-lg-3 d-flex flex-column align-items-center justify-content-center">
         <div class="container-menu-home" style="background-image: url('assets/images/menu_imagen8.png')">
         </div>
-        <div class="text-menu-home pequeñajo d-inline-block text-center mt-3 justify-content-center align-items-end">
+        <div class="text-menu-home little-format d-inline-block text-center mt-3 justify-content-center align-items-end">
           <p class="p-0 m-0 fw-semibold align-self-end">Del mundo</p>
         </div>
       </div>
@@ -129,13 +129,13 @@
       </div>
 
       <div class="row m-0 p-0 bg-black centrar-mini d-flex justify-content-between">
-        <div class="banner-b grandote col-12 col-md-4 m-0 p-0">
+        <div class="banner-b big-format col-12 col-md-4 m-0 p-0">
         </div>
 
-        <div class="banner-b grandote col-12 col-md-4 m-0 p-0">
+        <div class="banner-b big-format col-12 col-md-4 m-0 p-0">
         </div>
 
-        <div class="banner-b grandote col-12 col-md-4 m-0 p-0">
+        <div class="banner-b big-format col-12 col-md-4 m-0 p-0">
         </div>
       </div>
     </div>
@@ -180,6 +180,8 @@
       } ?>
     </div>
   </div>
+  </body>
+  
   <?php include_once "views/footer.php" ?>
 
 </html>

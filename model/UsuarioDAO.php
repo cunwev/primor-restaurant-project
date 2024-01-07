@@ -62,7 +62,7 @@ class UsuarioDAO
                     $_SESSION['user'] = serialize($usuarioObj);
                     $_SESSION['iduser'] = $usuarioObj->getClienteId();
 
-                    // Redirigir según el tipo de usuario
+                    // Redirigir según el tipo de usuario, se deja asi por defecto
                     if ($usuarioObj instanceof UsuarioAdmin) {
                         header('Location:' . url . '?controller=user&action=login');
                     } else {

@@ -83,7 +83,7 @@
 
                 <div class="row banner-cart-a">
                   <div class="col-sm-4 container d-flex align-items-center justify-content-center">
-                    <img src="assets/images/tarjeta_digital.png" width="140" height="140">
+                    <img src="assets/images/tarjeta_digital.png" width="140" height="140" alt="Imagen de tarjeta digital de Primor.">
                   </div>
                   <div class="col-sm-8 text-center justify-content-center">
                     <p class="cart-banner-text-a fw-bold">REGALA PRIMOR</p>
@@ -156,6 +156,7 @@
       } ?>
     </div>
   </div>
+  </body>
   <!-------------------------------------------------------------------------------->
 
   <?php include_once "views/footer.php" ?>
